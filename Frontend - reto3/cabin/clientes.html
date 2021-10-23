@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de ...</title>
+    <!--
+    <script src="js/jquery-3.6.0.min.js"></script>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Cjs/listar.js"></script>
+    <script src="Cjs/registrar.js"></script>
+    <script src="Cjs/editar.js"></script>
+    <script src="Cjs/borrar.js"></script>
+    <script src="Cjs/Perfil.js"></script>
+    <script src="Cjs/funciones.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Lista de clientes</h1>
+        <div id="mensajes"></div>
+        <br>
+        <a href="index.html"><img src="img/back.png" alt="Regresar"></a>
+        
+        <button id="nuevoRegistro" onclick="activaNuevo();">Añadir nuevo cliente</button>
+        <br>
+        <div id="listado"></div>
+
+        <!-- Seccion para nuevos registros-->
+        <div id="nuevo">
+            <h3>Registrar nuevo cliente</h3>
+            <fieldset>
+                <p>
+                    <h5>Id</h5>
+                    <input type="number" id="id" placeholder="id">
+                </p>
+                <p>
+                    <h5>Nombre</h5>
+                    <input type="text" id="name" placeholder="name">
+                </p>
+                <p>
+                    <h5>Email</h5>
+                    <input type="text" id="email" placeholder="email">
+                </p>
+                <p>
+                    <h5>Edad</h5>
+                    <input type="number" id="age" placeholder="edad">
+                </p>
+                <p>
+                    <button onclick="registrar();">Guardar</button>
+                    <button onclick="estadoInicial();">Cancelar</button>
+                </p>
+            </fieldset>
+        </div>
+
+
+        <!-- Seccion para editar cliente-->
+        <div id="editar">
+            <h4>Editar cliente</h4>
+                <fieldset>
+                    <input type="number" id="idEdit" placeholder="id">
+                    <p>
+                        <h5>Nombre</h5>
+                        <input type="text" id="nameEdit" placeholder="name">
+                    </p>
+                    <p>
+                        <h5>Email</h5>
+                        <input type="text" id="emailEdit" placeholder="brand">
+                    </p>
+                    <p>
+                        <h5>Edad</h5>
+                        <input type="number" id="ageEdit" placeholder="rooms">
+                    </p>
+                    <p>
+                        <button onclick="actualizar();">Actualizar</button>
+                        <button onclick="estadoInicial();">Cancelar</button>
+                    </p>
+                </fieldset>
+        </div>
+
+        <!-- Seccion para ver perfil del cliente-->
+        <div id="perfil">
+            <h4>Perfil del cliente</h4>
+            <fieldset>
+                <p>
+                    <h5>id</h5>
+                    <tb id=identificacion></tb>
+                </p>
+                <p>
+                    <h5>Nombre</h5><tb id=nombre></tb>
+                </p>
+                <p>
+                    <h5>Email</h5>
+                    <tb id=correo></tb>
+                </p>
+                <p>
+                    <h5>Edad</h5>
+                    <tb id=años></tb>
+                </p>
+                <p>
+                    <div id= "botones"></div>
+                </p>
+            </fieldset>`;
+        </div>
+        
+    </div>
+</body>
+
+</html>

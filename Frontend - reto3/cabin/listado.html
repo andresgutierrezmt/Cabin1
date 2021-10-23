@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cabañas</title>
+    <!--
+    <script src="js/jquery-3.6.0.min.js"></script>
+    -->
+    <link rel="stylesheet" href="css/listaStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Pjs/listar.js"></script>
+    <script src="Pjs/registrar.js"></script>
+    <script src="Pjs/editar.js"></script>
+    <script src="Pjs/borrar.js"></script>
+    <script src="Pjs/funciones.js"></script>
+</head>
+
+<body>
+    <div>
+
+
+        <!-- en el elemento identificado con el id 'mensajes' se mostraran los mensajes
+            o resultado de ejecutar la peticion
+        -->
+        <div id="mensajes"></div>
+        <br>
+
+            
+    <header>
+        <div class=ancho>
+            <div class=logo>
+                <p><a href="index.html">Cabin</a></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="listado.html">Cabañas</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="mensajes.html">Mensajes</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+        
+    <br>
+    <br>
+
+<div class = "principal">
+    <div class="container">
+        <button id="nuevoRegistro" onclick="activaNuevo();">nueva cabaña</button>
+        <!--aqui se actualizara el listado -->
+        <br></br>
+        <div id="listado"></div>
+    </div>
+
+    <aside>
+        <!-- Seccion para nuevos registros-->
+        <div id="nuevo">
+            <h3>Registrar una nueva cabaña</h3>
+
+            <fieldset>
+                <p>
+                    <h5>Id</h5>
+                    <input type="number" id="id" placeholder="id">
+                </p>
+                <p>
+                    <h5>Nombre</h5>
+                    <input type="text" id="name" placeholder="name">
+                </p>
+                <p>
+                    <h5>Marca</h5>
+                    <input type="text" id="brand" placeholder="brand">
+                </p>             
+                <p>
+                    <h5>Cuarto</h5>
+                    <input type="number" id="rooms" placeholder="rooms">
+                </p>
+                <p>
+                    <h5>Categoria</h5>
+                    <input type="number" id="category" placeholder="category_id">
+                </p>
+                <p>
+                    <button onclick="registrar();">Guardar</button>
+                    <button onclick="estadoInicial();">Cancelar</button>
+                </p>
+            </fieldset>
+        </div>
+
+
+        <!-- Seccion para editar registros-->
+        <div id="editar">
+            <h4>Editar cabñana</h4>
+                <fieldset>
+                    <input type="number" id="idEdit" placeholder="id">
+                    <p>
+                        <h5>Nombre</h5>
+                        <input type="text" id="nameEdit" placeholder="name">
+                    </p>
+                    <p>
+                        <h5>Marca</h5>
+                        <input type="text" id="brandEdit" placeholder="brand">
+                    </p>
+                    <p>
+                        <h5>Cuartos</h5>
+                        <input type="number" id="roomsEdit" placeholder="rooms">
+                    </p>
+                    <p>
+                        <h5>Categoria</h5>
+                        <input type="number" id="categoryEdit" placeholder="category_id">
+                    </p>
+                    <p>
+                        <button onclick="actualizar();">Actualizar</button>
+                        <button onclick="estadoInicial();">Cancelar</button>
+                    </p>
+                </fieldset>
+        </div>
+    </aside>
+</div>
+</body>
+
+</html>
