@@ -4,16 +4,12 @@
  */
 package com.reto3b.reto3b.modelos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,24 +17,20 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author Andres C. Gutierrez G.
+ * @author Andres C Gutierrez
  */
 
 @Entity
-@Table(name="category")
-@JsonPropertyOrder({"id","name","description","cabins"})
+@Table(name= "admin")
+@JsonPropertyOrder({"idAdmin","email","name","password"})
 @Data
-@AllArgsConstructor 
+@AllArgsConstructor //Constructores con todos los parametros generados automaticamente
 @NoArgsConstructor
-public class Category implements Serializable{
-    @Id
+public class Admin implements Serializable{
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idAdmin;
+    private String email;
     private String name;
-    private String description;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="category")
-    @JsonIgnoreProperties("category")
-    private List<Cabin> cabin;
-
+    private String passaword;
 }

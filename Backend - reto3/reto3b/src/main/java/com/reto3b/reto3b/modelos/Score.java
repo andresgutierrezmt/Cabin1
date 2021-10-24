@@ -7,7 +7,6 @@ package com.reto3b.reto3b.modelos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,30 +20,24 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author Andres C. Gutierrez
+ * @author Andres C Gutierrez
  */
 
 @Entity
-@Table(name = "message")
-@JsonPropertyOrder({"idMessage","messageText","cabin","client"})
-@Data 
-@AllArgsConstructor 
-@NoArgsConstructor 
-public class Message implements Serializable{
-
+@Table(name="score")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonPropertyOrder({"idScore","message","starts","reservationId"})
+public class Score implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMessage;
+    private Integer idScore;
     private String messageText;
+    private Integer stars;
     
     @ManyToOne
-    @JoinColumn(name="client")
-    @JsonIgnoreProperties({"client","messages","reservations"})
-    private Client client;
-    
-    @ManyToOne
-    @JoinColumn(name="cabin")
-    @JsonIgnoreProperties({"client","messages","reservations"})
-    private Cabin cabin;
-    
+    @JoinColumn(name="reservationId")
+    @JsonIgnoreProperties("reservation")
+    private Reservation reservation;
 }

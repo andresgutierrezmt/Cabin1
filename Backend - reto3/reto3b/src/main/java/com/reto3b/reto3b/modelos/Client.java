@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "client")
-@JsonPropertyOrder({"idClient","email","password","name","age"})
+@JsonPropertyOrder({"idClient","email","password","name","age","messages","reservations"})
 @Data
 @AllArgsConstructor 
 @NoArgsConstructor
@@ -38,9 +38,9 @@ public class Client implements Serializable{
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="client")
     @JsonIgnoreProperties("client")
-    private List<Message> message;
+    private List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="client")
     @JsonIgnoreProperties("client")
-    private List<Reservation> reservation;
+    private List<Reservation> reservations;
 }

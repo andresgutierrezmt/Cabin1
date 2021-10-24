@@ -30,7 +30,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "cabin")
-@JsonPropertyOrder({"id","brand","rooms","name","description","category"})
+@JsonPropertyOrder({"id","name","brand","rooms","description","category","messages","reservations"})
 @Data //Metodos Getter and setter automaticos
 @AllArgsConstructor //Constructores con todos los parametros generados automaticamente
 @NoArgsConstructor // Constructores vacios generados automaticamente
@@ -51,10 +51,10 @@ public class Cabin implements Serializable{
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="cabin")
     @JsonIgnoreProperties({"cabin","client"})
-    private List<Message> message;
+    private List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="cabin")
     @JsonIgnoreProperties({"cabin","message"})
-    private List<Reservation> reservation;
+    private List<Reservation> reservations;
     
 }
