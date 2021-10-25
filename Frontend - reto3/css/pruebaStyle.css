@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Josefin Sans', sans-serif;
+}
+
+.menu{
+    background-color: #1a202c;
+    color: #ffff;
+    height: 70px;
+}
+
+.menu__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.menu__links{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+    --animation: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg)
+}
+
+
+.menu__item:hover{
+    --animation: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --transform: rotate(0deg)
+}
+
+.menu__link{
+    color:aliceblue;
+    text-decoration: none;
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.menu__link:hover{
+    background: #5e7094;
+}
+
+.menu__arrow{
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
+}
+
+.menu__nesting{
+    list-style: none;
+    transition:clip-path .3;
+    clip-path: var(--animation);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color:#000;
+}
+
