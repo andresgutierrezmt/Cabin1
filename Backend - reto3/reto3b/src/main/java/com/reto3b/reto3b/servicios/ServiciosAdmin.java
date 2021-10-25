@@ -5,6 +5,7 @@
 package com.reto3b.reto3b.servicios;
 
 import com.reto3b.reto3b.modelos.Admin;
+import com.reto3b.reto3b.modelos.Cabin;
 import com.reto3b.reto3b.repositorios.RepositorioAdmin;
 import java.util.List;
 import java.util.Optional;
@@ -43,4 +44,36 @@ public class ServiciosAdmin {
            }
        }
    }
+   
+
+    public Admin update(Admin admin){
+        if(admin.getIdAdmin()!=null){
+            Optional<Admin> e=metodosCrud.getAdmin(admin.getIdAdmin());
+            if(!e.isEmpty()){
+                if(admin.getName()!=null){
+                    e.get().setName(admin.getName());
+                }
+                if(admin.getEmail()!=null){
+                    e.get().setEmail(admin.getEmail());
+                }
+                if(admin.getPassaword()!=null){
+                    e.get().setPassaword(admin.getPassaword());
+                }
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return admin;
+            }
+        }else{
+            return admin;
+        }
+    }
+    
+    public boolean delete(int idAdmin){
+        Boolean aBoolean = getAdmin(idAdmin).map(admin -> {
+            metodosCrud.delete(admin);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+    }
 }

@@ -28,6 +28,10 @@ import lombok.NoArgsConstructor;
  * @author Andres C. Gutierrez
  */
 
+
+/**
+ * Propiedades Spring boot
+ */
 @Entity
 @Table(name = "cabin")
 @JsonPropertyOrder({"id","name","brand","rooms","description","category","messages","reservations"})
@@ -36,6 +40,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // Constructores vacios generados automaticamente
 public class Cabin implements Serializable{
     
+    /**
+     * Columnas y elementos de la tabla
+     */
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -44,9 +51,12 @@ public class Cabin implements Serializable{
     private String name;
     private String description;
 
+    /**
+     * Relaciones
+     */
     @ManyToOne
     @JoinColumn(name="category")
-    @JsonIgnoreProperties("cabin")
+    @JsonIgnoreProperties("cabins")
     private Category category;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="cabin")

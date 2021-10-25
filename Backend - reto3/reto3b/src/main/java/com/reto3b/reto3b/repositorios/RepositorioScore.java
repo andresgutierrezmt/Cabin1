@@ -4,6 +4,7 @@
  */
 package com.reto3b.reto3b.repositorios;
 import com.reto3b.reto3b.interfaces.InterfaceScore;
+import com.reto3b.reto3b.modelos.Cabin;
 import com.reto3b.reto3b.modelos.Score;
 import java.util.List;
 import java.util.Optional;
@@ -32,4 +33,8 @@ public class RepositorioScore {
     public Score save(Score score){
         return crud.save(score);
     } 
+    
+    public void delete(Score score){
+        crud.delete(score);
+    }
 }

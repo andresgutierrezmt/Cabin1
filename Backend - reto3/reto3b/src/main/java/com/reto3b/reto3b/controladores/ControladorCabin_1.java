@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.reto3b.reto3b.servicios.ServiciosCabin;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
@@ -43,7 +45,7 @@ public class ControladorCabin_1 {
         return servicios.getAll();
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Cabin> getCabin(@PathVariable("id") int id){
         return servicios.getCabin(id);
     }
@@ -53,4 +55,17 @@ public class ControladorCabin_1 {
     public Cabin save(@RequestBody Cabin cabin){
         return servicios.save(cabin);
     }
+    
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Cabin update(@RequestBody Cabin cabin){
+        return servicios.update(cabin);
+    }
+    
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int idCabin){
+        return servicios.delete(idCabin);
+    }
 }
+

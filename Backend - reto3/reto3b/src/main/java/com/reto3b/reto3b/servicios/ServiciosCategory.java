@@ -4,9 +4,7 @@
  */
 package com.reto3b.reto3b.servicios;
 
-import com.reto3b.reto3b.modelos.Cabin;
 import com.reto3b.reto3b.modelos.Category;
-import com.reto3b.reto3b.repositorios.RepositorioCabin;
 import com.reto3b.reto3b.repositorios.RepositorioCategory;
 import java.util.List;
 import java.util.Optional;
@@ -44,5 +42,37 @@ public class ServiciosCategory {
                 return category;
             }
         }
-    }  
+    } 
+    
+    public Category update(Category category){
+        if(category.getId()!=null){
+            Optional<Category> e=metodosCrud.getCategory(category.getId());
+            if(!e.isEmpty()){
+                if(category.getName()!=null){
+                    e.get().setName(category.getName());
+                }
+                
+                if(category.getDescription()!=null){
+                    e.get().setDescription(category.getDescription());
+                }
+                
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return category;
+            }
+        }else{
+            return category;
+        }
+    }
+    
+    public boolean delete(int idCategory){
+        Boolean aBoolean = getCategory(idCategory).map(category -> {
+            metodosCrud.delete(category);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+    }
 }
+ 
+

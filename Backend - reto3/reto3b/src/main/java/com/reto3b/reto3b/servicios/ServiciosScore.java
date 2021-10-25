@@ -5,6 +5,7 @@
 package com.reto3b.reto3b.servicios;
 
 import com.reto3b.reto3b.modelos.Admin;
+import com.reto3b.reto3b.modelos.Cabin;
 import com.reto3b.reto3b.modelos.Score;
 import com.reto3b.reto3b.repositorios.RepositorioScore;
 import java.util.List;
@@ -44,4 +45,35 @@ public class ServiciosScore {
            }
        }
    }
+   
+    public Score update(Score score){
+        if(score.getIdScore()!=null){
+            Optional<Score> e=metodosCrud.getScore(score.getIdScore());
+            if(!e.isEmpty()){
+                if(score.getMessageText()!=null){
+                    e.get().setMessageText(score.getMessageText());
+                }
+                if(score.getStars()!=null){
+                    e.get().setStars(score.getStars());
+                }
+                if(score.getReservation()!=null){
+                    e.get().setReservation(score.getReservation());
+                }
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return score;
+            }
+        }else{
+            return score;
+        }
+    }
+    
+    public boolean delete(int idScore){
+        Boolean aBoolean = getScore(idScore).map(score -> {
+            metodosCrud.delete(score);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+    }
 }

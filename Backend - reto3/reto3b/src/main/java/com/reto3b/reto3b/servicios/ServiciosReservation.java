@@ -4,6 +4,7 @@
  */
 package com.reto3b.reto3b.servicios;
 
+import com.reto3b.reto3b.modelos.Cabin;
 import java.util.List;
 import java.util.Optional;
 import com.reto3b.reto3b.modelos.Reservation;
@@ -42,5 +43,42 @@ public class ServiciosReservation {
                 return reservation;
             }
         }
-    } 
+    }
+    
+    public Reservation update(Reservation reservation){
+        if(reservation.getIdReservation()!=null){
+            Optional<Reservation> e=metodosCrud.getReservation(reservation.getIdReservation());
+            if(!e.isEmpty()){
+                if(reservation.getDevolutionDate()!=null){
+                    e.get().setDevolutionDate(reservation.getDevolutionDate());
+                }
+                if(reservation.getStartDate()!=null){
+                    e.get().setStartDate(reservation.getStartDate());
+                }
+                if(reservation.getClient()!=null){
+                    e.get().setClient(reservation.getClient());
+                }
+                if(reservation.getCabin()!=null){
+                    e.get().setCabin(reservation.getCabin());
+                }
+                if(reservation.getScore()!=null){
+                    e.get().setScore(reservation.getScore());
+                }
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return reservation;
+            }
+        }else{
+            return reservation;
+        }
+    }
+    
+    public boolean delete(int idReservation){
+        Boolean aBoolean = getReservation(idReservation).map(reservation -> {
+            metodosCrud.delete(reservation);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+    }
 }

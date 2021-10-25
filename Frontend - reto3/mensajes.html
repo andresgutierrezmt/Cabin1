@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Mjs/listar.js"></script>
+    <script src="Mjs/registrar.js"></script>
+    <script src="Mjs/editar.js"></script>
+    <script src="Mjs/borrar.js"></script>
+    <script src="Mjs/funciones.js"></script>
+</head>
+
+<body>
+    <h1>Mensajes de nuestros clientes</h1>
+    <div id="mensajes"></div>
+    <br>
+    <a href="index.html"><img src="img/back.png" alt="Regresar"></a>
+
+    <button id="nuevoRegistro" onclick="activaNuevo();">nuevo mensaje</button>
+    <br></br>
+    <div id="listado"></div>
+
+            <!-- Seccion para nuevos registros-->
+            <div id="nuevo">
+                <h3>nuevo mensaje</h3>
+                <fieldset>
+                    <p>
+                        <h5>identificacion</h5>
+                        <input type="number" id="id" placeholder="id">
+                    </p>
+                    <p>
+                        <h5>Mensaje</h5>
+                        <input type="text" id="mensaje" placeholder="message">
+                    </p>
+                    <p>
+                        <button onclick="registrar();">Guardar</button>
+                        <button onclick="estadoInicial();">Cancelar</button>
+                    </p>
+                </fieldset>
+            </div>
+    
+    
+            <!-- Seccion para editar cliente-->
+            <div id="editar">
+                <h4>Editar cliente</h4>
+                    <fieldset>
+                        <p>
+                        <input type="number" id="idEdit" placeholder="Identificacion">
+                        </p>
+                        <p>
+                            <h5>Editar Mensaje</h5>
+                            <input type="text" id="mensajeEdit" placeholder="mensaje">
+                        </p>
+                        <p>
+                            <button onclick="actualizar();">Actualizar</button>
+                            <button onclick="estadoInicial();">Cancelar</button>
+                        </p>
+                    </fieldset>
+            </div>
+</body>
+</html>
+
+
+
+

@@ -1,5 +1,6 @@
 package com.reto3b.reto3b.controladores;
 
+import com.reto3b.reto3b.modelos.Cabin;
 import java.util.List;
 import java.util.Optional;
 import com.reto3b.reto3b.modelos.Reservation;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.reto3b.reto3b.servicios.ServiciosReservation;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
@@ -43,5 +46,17 @@ public class ControladorReservation_1 {
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation save(@RequestBody Reservation reservation){
         return servicios.save(reservation);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservation update(@RequestBody Reservation reservation){
+        return servicios.update(reservation);
+    }
+    
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int idReservation){
+        return servicios.delete(idReservation);
     }    
 }

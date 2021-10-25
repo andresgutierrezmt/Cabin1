@@ -4,6 +4,7 @@
  */
 package com.reto3b.reto3b.servicios;
 
+import com.reto3b.reto3b.modelos.Cabin;
 import com.reto3b.reto3b.modelos.Client;
 import com.reto3b.reto3b.repositorios.RepositorioClient;
 import java.util.List;
@@ -43,4 +44,45 @@ public class ServiciosClient {
             }
         }
     }
+    
+    public Client update(Client client){
+        if(client.getIdClient()!=null){
+            Optional<Client> e=metodosCrud.getClient(client.getIdClient());
+            if(!e.isEmpty()){
+                if(client.getName()!=null){
+                    e.get().setName(client.getName());
+                }
+                if(client.getEmail()!=null){
+                    e.get().setEmail(client.getEmail());
+                }
+                if(client.getAge()!=null){
+                    e.get().setAge(client.getAge());
+                }
+                if(client.getPassword()!=null){
+                    e.get().setPassword(client.getPassword());
+                }
+                if(client.getMessages()!=null){
+                    e.get().setMessages(client.getMessages());
+                }
+                if(client.getReservations()!=null){
+                    e.get().setReservations(client.getReservations());
+                }
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return client;
+            }
+        }else{
+            return client;
+        }
+    }
+    
+    public boolean delete(int idClient){
+        Boolean aBoolean = getClient(idClient).map(client -> {
+            metodosCrud.delete(client);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+    }
 }
+

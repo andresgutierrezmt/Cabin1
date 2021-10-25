@@ -42,6 +42,7 @@ public class Reservation implements Serializable{
     private Date startDate;
     private Date devolutionDate;
     private String status = "created";
+    private String score;
     
     @ManyToOne
     @JoinColumn(name="client")
@@ -50,12 +51,12 @@ public class Reservation implements Serializable{
     
     @ManyToOne
     @JoinColumn(name="cabin")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties({"reservations","cabins"})
     private Cabin cabin;
     
     
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="reservation")
+    /*@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="reservation")
     @JsonIgnoreProperties("score")
-    private List<Score> score;
+    private List<Score> score;*/
 }

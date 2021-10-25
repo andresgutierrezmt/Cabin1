@@ -6,6 +6,7 @@ package com.reto3b.reto3b.repositorios;
 
 import com.reto3b.reto3b.interfaces.InterfaceAdmin;
 import com.reto3b.reto3b.modelos.Admin;
+import com.reto3b.reto3b.modelos.Cabin;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,9 @@ public class RepositorioAdmin {
     
     public Admin save(Admin admin){
         return crud.save(admin);
+    }
+    
+    public void delete(Admin admin){
+        crud.delete(admin);
     }
 }
