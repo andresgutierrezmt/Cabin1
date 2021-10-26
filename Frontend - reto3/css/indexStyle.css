@@ -1,158 +1,137 @@
-/*nav ul li{
-    font-family: sans-serif;
-    float: left;
-    list-style: none;
-    width: 100px;
-    line-height: 45px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300;1,400;1,700&display=swap');
 
-nav{
-    background-color:rgb(255, 253, 253);
-    width: 99%;
-    height: 45px;
-    border-radius: 10px;
-    box-shadow: 4px 13px 37px rgb(0, 0, 0);
-    margin: 0px auto;
-}*/
-
-header{
-    width: 100%;
-    background: rgb(253, 253, 253);
-    height:50px;
-    border-radius: 10px;
-    box-shadow: 4px 13px 37px black;
-}
-
-.ancho{
-    width: 80%;
-    height: 50px;
-    margin: 0px auto;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-}
-
-.logo{
-    width: 30%;
-    height:50px;
-    float: left;
-}
-
-.logo p a{
-    color: rgb(0, 0, 0);
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 40px;
-    text-decoration: none;
-    line-height:10px;
-    padding:0px;
+*{
+    margin: 0px;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
 }
 
-nav{
-    width: 70%;
-    height: 50px;
-    float: left;
-    background:white;
-    text-align: right;
-    padding-top: 0px;
-    /*box-sizing: border-box;*/
-}
-
-nav ul li{
-    /*display: inline;*/
-    float: right;
-    list-style: none;
-    --cli: polygon(0 0, 100% 0, 100% 0, 0 0);
-}
-
-nav ul li a{
-    color: black;
-    text-align: center;
-    font-family: sans-serif;
+.menu_logo{
     text-decoration: none;
-    text-transform: uppercase;
+    color: #fff;
+}
+
+.menu{
+    background-color: #1A202C;
+    color: #ffff;
+    height: 70px;
+}
+
+.menu_container{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width:90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.menu_links{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+}
+
+.menu_item{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    
+    --clip:polygon(0 0, 100% 0, 99% 0, 0 0);
+    --transform: rotate(-90deg);
+}
+
+.menu_item:hover{
+    --clip:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --transform: rotate(0deg);
+}
+
+.menu_nesting{
+    clip-path: var(--clip);
+    list-style: none;
+    transition: clip-path .3s;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background:rgb(0, 0, 0);
+}
+
+.menu_link{
+    color:#ffff;
+    text-decoration: none;
+    padding:0px 30px;
+    display: flex;
+    height: 100%;
+    align-items: center; 
+}
+
+.menu_link:hover{
+    background-color: #6c7ea3;
+}
+
+.menu_arrow{
+    transform: var(--transform);
+    transition: transform 0.3s;
     display: block;
-    padding-left: 20px;
+    margin-left: 3px;
 }
 
-nav ul li a:hover{
-    color:rgb(192, 190, 190);
+.menu_link--inside{
+    padding:30px 100px 30px 20px;
 }
 
-nav #desple {
-    background:rgb(255, 255, 255);
-    border-radius: 10px;
-    clip-path: var(--cli);
+.menu_link--inside:hover{
+    background-color: #798499;
 }
 
-nav #desple li{
-    background:rgb(255, 255, 255);
-    float:none;
-    padding:20px;
-    padding-left: 0;
-    border-radius: 10px;
+.menu_hamburger{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none;
 }
 
-nav ul li:hover{
-    --cli: clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+.menu_img{
+    display:block;
+    width:36px;
 }
 
-nav #desple a{
-    color:rgb(0, 0, 0);
+
+.contenedor_principal{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 100%;
+    height:800px;
+    box-sizing: border-box;
 }
 
-body{
-    background-image:url("img/fond3.jpg");
-    font-family: sans-serif;
-    width: 1000px;
-    margin:0px auto;
-    padding: 120px;
-    /*background-repeat: no-repeat;*/
+.titulo{
+    text-align: center;
 }
 
-.container{
-    border-radius: 5px;
-    width:calc(50%);
-    height:500px;
-    box-shadow: 4px 13px 37px rgb(0, 0, 0);
-    background-color:rgb(255, 253, 253);
-    float:left;
+.Titulo_texto{
+    padding:10px;
+    text-align: center;
+}
+
+.texto, .texto2{
     padding: 10px;
 }
 
-.container h2{
-    text-align: center;
+.contenedor_imagen{
+    padding-left: 100px;
 }
 
-#parrafo{
-    margin: 10px auto;
-}
-
-/*.text-md-center{
-    color: #424242;
-    font: 500 28px/32px "Google Sans",sans-serif;
-    text-align: center;
-    line-height: 2;
-    font-size: 40px;
-}*/
-
-/*header{
-    background:  #174ea6;
-    border-radius: 10px;
-    height: 100px;
+.pie_pagina{
     width: 100%;
-}*/
-
-.clearfix{
-    clear:both;
-}
-
-footer{
+    height:10%;
+    padding: 50px;
     margin: 0px auto;
     text-align: center;
-}
-
-aside{
-    background-image:url("img/cabaña.jpg");
-    border-radius: 10px;
-    height: 520px;
 }
