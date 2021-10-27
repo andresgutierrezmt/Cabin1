@@ -9,6 +9,7 @@
     <!--
     <script src="js/jquery-3.6.0.min.js"></script>
     -->
+    <link href="css/indexStyle.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Cjs/listar.js"></script>
     <script src="Cjs/registrar.js"></script>
@@ -17,6 +18,59 @@
     <script src="Cjs/Perfil.js"></script>
     <script src="Cjs/funciones.js"></script>
 </head>
+
+<header>    
+    <nav class="menu">
+        <section class="menu_container">
+            <h1>
+                <a class="menu_logo" href="index.html">Cabin</a>
+            </h1>
+
+            <ul class="menu_links">
+                <li class="menu_item">
+                    <a href="acerca.html" class="menu_link">Acerca de nosotros</a>
+                </li>
+
+                <li class="menu_item menu_item--show">
+                    <a href="#" class="menu_link">Cabañas <img src="assets/Arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu inside">
+                            <a href="listado.html" class="menu_link menu_link--inside">Cabañas</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="categoria.html" class="menu_link menu_link--inside">Categoria</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_item menu_item--show">
+                    <a href="#" class="menu_link">Clientes<img src="assets/Arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu inside">
+                            <a href="clientes.html" class="menu_link menu_link--inside">Nuestros clientes</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="mensajes.html" class="menu_link menu_link--inside">Mensajes</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="#" class="menu_link menu_link--inside">Reservaciones</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_item">
+                    <a href="#" class="menu_link">Contacto</a>
+                </li>
+
+            </ul>
+
+            <div class="menu_hamburger">
+                <img src="assets/menu.svg" class="menu_img">
+            </div>
+
+        </section>
+    </nav>
+</header>
 
 <body>
     <div>
