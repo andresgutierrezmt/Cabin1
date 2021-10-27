@@ -16,7 +16,7 @@
 .menu{
     background-color: #1A202C;
     color: #ffff;
-    height: 100px;
+    height: 70px;
 }
 
 .menu_container{
@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items:center;
     width:90%;
-    max-width: 1200px;
+    max-width: 1050px;
     height: 100%;
     margin: 0 auto;
 }
@@ -105,7 +105,7 @@
 }
 
 body{
-    width: 2000px;
+    width: 1505px;
     margin:0px auto;
     padding: 0px;
 }
@@ -138,6 +138,7 @@ body{
 
 .contenedor_imagen{
     margin:0px auto;
+    padding-left: 220px;
     width: 100%;
     height: 540px;
     /*border: 10px solid red;*/
@@ -145,11 +146,65 @@ body{
 }
 
 .contenedor_imagen img{
-    height: 500px;
-    padding-left: 500px;
-
+    height: 450px;
     border-radius: 10px;
     box-sizing: border-box;
+}
+
+/*
+* LISTADO INDEX DISEÑOS
+*/
+
+.contenedor_principal {
+    padding:50px;
+    /*border: 10px solid red;*/
+}
+
+.contenedor_principal #listado table{
+    box-shadow: 2px 3px 4px rgb(192, 190, 190);
+    background:white;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+.contenedor_principal #listado th,td{
+    padding:20px;
+}
+
+.contenedor_principal #listado thead{
+    background:#0066ff;
+    border-bottom: solid 5px #040274;
+    color: white;
+}
+
+.contenedor_principal .buton_item{
+    width: 640px;
+    padding: 20px 0px 0px 0px;
+    margin: 0px auto;
+}
+
+.contenedor_principal .buton_item #nuevoRegistro{
+    box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
+    height: 40px;
+    width: 100px;
+}
+
+button{
+    border: 0px;
+    width: 60px;
+    height: 30px;
+    box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
+}
+
+button:hover{
+    background:rgb(192, 190, 190);
+    transition: hover 0.10s;
+}
+
+#nuevoRegistro:hover{
+    background:rgb(192, 190, 190);
+    transition: hover 0.10s;
 }
 
 .pie_pagina{
