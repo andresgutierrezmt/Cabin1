@@ -110,6 +110,20 @@ body{
     padding: 0px;
 }
 
+/* 
+*   VENTANA MODAL
+*/
+
+#modal{
+    background: red;
+    height: 1000px;
+    width: 1000px;
+}
+
+/*
+* Contenedor principal
+*/
+
 .contenedor_principal{
     background-color: rgb(255, 255, 255);
     padding: 10px;
@@ -181,6 +195,7 @@ body{
 .contenedor_principal .buton_item{
     width: 640px;
     padding: 20px 0px 0px 0px;
+    padding-left: 250px;
     margin: 0px auto;
 }
 
@@ -205,6 +220,18 @@ button:hover{
 #nuevoRegistro:hover{
     background:rgb(192, 190, 190);
     transition: hover 0.10s;
+}
+
+/*
+* Nuevo registro
+*/
+
+#Content{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background: red;
+    padding: 10px;
 }
 
 .pie_pagina{

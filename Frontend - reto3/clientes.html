@@ -73,15 +73,14 @@
 </header>
 
 <body>
-    <div>
+    <div class="contenedor_principal">
         <h1>Lista de clientes</h1>
         <div id="mensajes"></div>
-        <br>
-        <a href="index.html"><img src="img/back.png" alt="Regresar"></a>
-        
-        <button id="nuevoRegistro" onclick="activaNuevo();">Añadir nuevo cliente</button>
-        <br>
         <div id="listado"></div>
+        <div class="buton_item">
+            <button id="nuevoRegistro" onclick="activaNuevo();">Añadir nuevo cliente</button>
+        </div>        
+    </div>
 
         <!-- Seccion para nuevos registros-->
         <div id="nuevo">
@@ -161,6 +160,11 @@
         </div>
         
     </div>
+
+    <footer class="pie_pagina">
+        Web Cabin | Desarrollado por Andres Camilo Gutierrez
+    </footer>
+
 </body>
 
 </html>

@@ -33,11 +33,9 @@ function registrar() {
 }
 
 function activaNuevo(){
-    $("#imgancho").hide(500);
-    $("#barra_lateral").show(500);
-    $("#nuevo").show(500);
+    $("#nuevo").hide(500);
     $("#id").focus();
     $("#editar").hide();
-    $("#nuevoRegistro").hide(500)
-    $("#listado").show(500);
+    $("#nuevoRegistro").hide(500);
+    $("#listado").hide(500);
 }

@@ -41,12 +41,12 @@ function listar() {
 function listarRespuesta(items) {
     $("#listado").html("");
     $("#listado").show();
-    var tabla = `<table border="5">
-                <tr>
+    var tabla = `<table>
+                <thead>
                     <th> id </th>
                     <th> nombre </th>
                     <th colspan="3"> Opciones </th>
-                </tr>`;
+                </thead>`;
     for (var i=0; i < items.length; i++) {
         tabla +=`<tr>
                     <td>${items[i].id}</td>
@@ -54,7 +54,7 @@ function listarRespuesta(items) {
                     <td><button onclick="editarRegistro(${items[i].id})">Editar</button></td>
                     <td><button onclick="borrarRegistro(${items[i].id})">Borrar</button></td>
                     <td><button onclick="Perfil(${items[i].id})">Perfil</button></td>
-                    </tr>`;
+                </tr>`;
     }
 
     tabla +=`</table>`;

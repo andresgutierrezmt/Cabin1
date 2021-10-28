@@ -9,7 +9,7 @@
     <!--
     <script src="js/jquery-3.6.0.min.js"></script>
     -->
-    <link href="css/indexStyle.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/indexStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Pjs/listar.js"></script>
     <script src="Pjs/registrar.js"></script>
@@ -74,36 +74,21 @@
 
 
 <body>
-    <div>
-
-
-        <!-- en el elemento identificado con el id 'mensajes' se mostraran los mensajes
-            o resultado de ejecutar la peticion
-        -->
-
-
-<div class = "principal">
     
-    <div class="contenedor_principal">
-        <h3 class="Titulo_texto">Registro de clientes</h3>
+
+<div class="contenedor_principal">
+        <h3 class="Titulo_texto"> Cabañas</h3>
         <!--aqui se actualizara el listado -->
         <div id="listado"></div>
         <div class="buton_item">
             <button id="nuevoRegistro" onclick="activaNuevo();">nueva cabaña</button>
         </div>
-    </div>
 
-    <div id="imgancho">
-        <div id=img></div>
-    </div>
-
-    <aside id = "barra_lateral">
         <div id= "Content">
             <!-- Seccion para nuevos registros-->
             <div id="nuevo">
                 <h3>Registrar una nueva cabaña</h3>
 
-                <fieldset>
                 <p>
                         <h5>Id</h5>
                         <input type="number" id="id" placeholder="id">
@@ -128,7 +113,6 @@
                         <button onclick="registrar();">Guardar</button>
                         <button onclick="estadoInicial();">Cancelar</button>
                     </p>
-                </fieldset>
             </div>
 
 
@@ -160,9 +144,8 @@
                     </fieldset>
             </div>
         </div>
-    </aside>
-</div>
-
+        
+    </div>
 
 <footer class="pie_pagina">
     Web Cabin | Desarrollado por Andres Camilo Gutierrez
