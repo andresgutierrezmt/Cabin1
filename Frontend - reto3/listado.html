@@ -77,7 +77,7 @@
     
 
 <div class="contenedor_principal">
-        <h3 class="Titulo_texto"> Cabañas</h3>
+        <h3 class="Titulo_texto" id="Titulo_texto"> Cabañas</h3>
         <!--aqui se actualizara el listado -->
         <div id="listado"></div>
         <div class="buton_item">
@@ -86,63 +86,34 @@
 
         <div id= "Content">
             <!-- Seccion para nuevos registros-->
-            <div id="nuevo">
-                <h3>Registrar una nueva cabaña</h3>
-
-                <p>
-                        <h5>Id</h5>
-                        <input type="number" id="id" placeholder="id">
-                    </p>
-                    <p>
-                        <h5>Nombre</h5>
-                        <input type="text" id="name" placeholder="name">
-                    </p>
-                    <p>
-                        <h5>Marca</h5>
-                        <input type="text" id="brand" placeholder="brand">
-                    </p>             
-                    <p>
-                        <h5>Cuarto</h5>
-                        <input type="number" id="rooms" placeholder="rooms">
-                    </p>
-                    <p>
-                        <h5>Categoria</h5>
-                        <input type="number" id="category" placeholder="category_id">
-                    </p>
-                    <p>
+            <section id="nuevo">
+                        <h4>formuario Registro</h4>
+                        <input class="entradasT" type="number" id="id" placeholder="id">
+                        <input class="entradasT" type="text" id="name" placeholder="name">
+                        <input class="entradasT" type="text" id="brand" placeholder="brand">
+                        <input class="entradasT" type="number" id="rooms" placeholder="rooms">
+                        <input class="entradasT" type="number" id="category" placeholder="category_id">
                         <button onclick="registrar();">Guardar</button>
                         <button onclick="estadoInicial();">Cancelar</button>
-                    </p>
-            </div>
+                </section>
 
 
             <!-- Seccion para editar registros-->
-            <div id="editar">
-                <h4>Editar cabñana</h4>
-                    <fieldset>
-                        <input type="number" id="idEdit" placeholder="id">
-                        <p>
-                            <h5>Nombre</h5>
-                            <input type="text" id="nameEdit" placeholder="name">
-                        </p>
-                        <p>
-                            <h5>Marca</h5>
-                            <input type="text" id="brandEdit" placeholder="brand">
-                        </p>
-                        <p>
-                            <h5>Cuartos</h5>
-                            <input type="number" id="roomsEdit" placeholder="rooms">
-                        </p>
-                        <p>
-                            <h5>Categoria</h5>
-                            <input type="number" id="categoryEdit" placeholder="category_id">
-                        </p>
-                        <p>
-                            <button onclick="actualizar();">Actualizar</button>
-                            <button onclick="estadoInicial();">Cancelar</button>
-                        </p>
-                    </fieldset>
-            </div>
+            <section id="editar">
+                        <h4>Editar cabñana</h4>
+                        <h6>id</h6>
+                        <input class="entradasT" type="number" id="idEdit" placeholder="id">
+                        <h6>nombre</h6>
+                        <input class="entradasT" type="text" id="nameEdit" placeholder="name">
+                        <h6>marca</h6>
+                        <input class="entradasT" type="text" id="brandEdit" placeholder="brand">
+                        <h6>cuartos</h6>
+                        <input class="entradasT" type="number" id="roomsEdit" placeholder="rooms">
+                        <h6>categoria</h6>
+                        <input class="entradasT" type="number" id="categoryEdit" placeholder="category_id">
+                        <button onclick="actualizar();">Actualizar</button>
+                        <button onclick="estadoInicial();">Cancelar</button>
+            </section>
         </div>
         
     </div>

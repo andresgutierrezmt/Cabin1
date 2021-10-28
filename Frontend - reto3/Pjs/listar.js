@@ -55,11 +55,12 @@ function listarRespuesta(items) {
 
 
 function estadoInicial(){
-    $("#barra_lateral").hide(500);
-    $("#nuevo").show(500);
-    $("#editar").hide(500);
-    $("#listado").hide(500);
-    $("#nuevoRegistro").hide(500);
+    $("#barra_lateral").hide();
+    $("#nuevo").hide();    
+    $("#Content").hide();
+    $("#editar").hide();
+    $("#listado").show(500);
+    $("#nuevoRegistro").show(500);
 
     //limpia el contenido de los campos del formulario nuevo
     $("#id").val(""),

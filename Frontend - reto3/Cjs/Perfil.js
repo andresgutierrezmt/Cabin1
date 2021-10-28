@@ -29,20 +29,22 @@ $("#nombre").html(items[0].name);
 $("#correo").html(items[0].email);
 $("#años").html(items[0].age);
 
-var botones = `<h4><button onclick="editarRegistro(${items[0].id})">Actualizar</button></h4><h4><button onclick="estadoInicial();">cancelar</button></h4>`;
+var botones = `<button class="btnperfil" onclick="editarRegistro(${items[0].id})">Actualizar</button><button class="btnperfil" onclick="estadoInicial();">atras</button>`;
 
 $("#botones").html(botones);
 $("#botones").show();
-$("#perfil").show()
+$("#perfil").show(500);
 }
 
 
 
-function Perfil(llaveRegistro){
+function Perfil(llaveRegistro){ 
+    $("#Titulo_texto").hide(500);
+    $("#Content").show(500);
     $("#nuevo").hide();
     $("#editar").hide();
-    $("#listado").show(500);
-    $("#nuevoRegistro").show()
+    $("#listado").hide(500);
+    $("#nuevoRegistro").hide()
     $("#perfil").hide()
     PerfilObtener(llaveRegistro)
 }

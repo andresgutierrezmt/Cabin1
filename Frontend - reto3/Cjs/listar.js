@@ -64,12 +64,14 @@ function listarRespuesta(items) {
 /**
  * Volver al estado inicial
  */
+
 function estadoInicial(){
-    $("#nuevo").hide();
+    $("#nuevo").hide();    
+    $("#Content").hide();
     $("#editar").hide();
     $("#perfil").hide();
     $("#listado").show(500);
-    $("#nuevoRegistro").show()
+    $("#nuevoRegistro").show(500)
 //vaciar casillas
     $("#id").val(""),
     $("#brand").val(""),

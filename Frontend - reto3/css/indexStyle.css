@@ -110,15 +110,7 @@ body{
     padding: 0px;
 }
 
-/* 
-*   VENTANA MODAL
-*/
 
-#modal{
-    background: red;
-    height: 1000px;
-    width: 1000px;
-}
 
 /*
 * Contenedor principal
@@ -196,6 +188,7 @@ body{
     width: 640px;
     padding: 20px 0px 0px 0px;
     padding-left: 250px;
+    display: flex;
     margin: 0px auto;
 }
 
@@ -207,7 +200,6 @@ body{
 
 button{
     border: 0px;
-    width: 60px;
     height: 30px;
     box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
 }
@@ -229,10 +221,50 @@ button:hover{
 #Content{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    background: red;
-    padding: 10px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 4px 5px 6px rgb(192, 190, 190);
+    padding: 30px;
+    width: 400px;
 }
+
+#Content h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+#Content .entradasT{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 2px solid #798499;
+}
+
+#Content .entradasT:hover{
+    border: 2px solid #000000;
+}
+
+#Content button{
+    padding: 12px;
+    margin: 16px 0;
+}
+
+#Content #perfil #botones{
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.txt{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button
 
 .pie_pagina{
     width: 100%;
