@@ -32,10 +32,11 @@ function registrar() {
  * ventana nuevo registro
  */
 function activaNuevo(){
+    $("#Content").show(500);
     $("#nuevo").show(500);
     $("#id").focus();
     $("#editar").hide();
-    $("#nuevoRegistro").hide(500)
-    $("#perfil").hide();
-    $("#listado").show(500);
+    $("#nuevoRegistro").hide(500);
+    $("#listado").hide(500);
+    $("#Titulo_texto").hide(500);
 }

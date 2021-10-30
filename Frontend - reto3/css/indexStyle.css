@@ -16,7 +16,7 @@
 .menu{
     background-color: #1A202C;
     color: #ffff;
-    height: 100px;
+    height: 70px;
 }
 
 .menu_container{
@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items:center;
     width:90%;
-    max-width: 1200px;
+    max-width: 1050px;
     height: 100%;
     margin: 0 auto;
 }
@@ -105,16 +105,24 @@
 }
 
 body{
-    width: 2000px;
+    width: 1505px;
     margin:0px auto;
     padding: 0px;
+    background-image: url("https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png");
 }
+
+
+
+
+/*
+* Contenedor principal
+*/
 
 .contenedor_principal{
     background-color: rgb(255, 255, 255);
     padding: 10px;
-    width: 85%;
-    height:800px;
+    width: 75%;
+    height:1000px;
     margin:0px auto;
     box-sizing: border-box;
     /*border: 10px solid red;*/
@@ -138,6 +146,7 @@ body{
 
 .contenedor_imagen{
     margin:0px auto;
+    padding-left: 220px;
     width: 100%;
     height: 540px;
     /*border: 10px solid red;*/
@@ -145,17 +154,122 @@ body{
 }
 
 .contenedor_imagen img{
-    height: 500px;
-    padding-left: 500px;
-
+    height: 450px;
     border-radius: 10px;
     box-sizing: border-box;
 }
 
-.pie_pagina{
+/*
+* LISTADO INDEX DISEÑOS
+*/
+
+.contenedor_principal {
+    padding:50px;
+    /*border: 10px solid red;*/
+}
+
+.contenedor_principal #listado table{
+    box-shadow: 2px 3px 4px rgb(192, 190, 190);
+    background:white;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+.contenedor_principal #listado th,td{
+    padding:20px;
+}
+
+.contenedor_principal #listado thead{
+    background:#0066ff;
+    border-bottom: solid 5px #040274;
+    color: white;
+}
+
+.contenedor_principal .buton_item{
+    width: 640px;
+    padding: 20px 0px 0px 0px;
+    padding-left: 250px;
+    display: flex;
+    margin: 0px auto;
+}
+
+.contenedor_principal .buton_item #nuevoRegistro{
+    box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
+    height: 40px;
+    width: 100px;
+}
+
+button{
+    border: 0px;
+    height: 30px;
+    box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
+}
+
+button:hover{
+    background:rgb(192, 190, 190);
+    transition: hover 0.10s;
+}
+
+#nuevoRegistro:hover{
+    background:rgb(192, 190, 190);
+    transition: hover 0.10s;
+}
+
+/*
+* Nuevo registro
+*/
+
+#Content{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 4px 5px 6px rgb(192, 190, 190);
+    padding: 30px;
+    width: 400px;
+}
+
+#Content h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+#Content .entradasT{
     width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 2px solid #798499;
+}
+
+#Content .entradasT:hover{
+    border: 2px solid #000000;
+}
+
+#Content button{
+    padding: 12px;
+    margin: 16px 0;
+}
+
+#Content #perfil #botones{
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.txt{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.pie_pagina{
+    background:white;
+    width: 75%;
     height:10%;
-    padding: 100px;
     margin: 0px auto;
     text-align: center;
 }

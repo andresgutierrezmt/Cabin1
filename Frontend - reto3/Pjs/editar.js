@@ -2,7 +2,6 @@ function editarRegistro(llaveRegistro) {
     let datos = {
         id: llaveRegistro
     }
-
     let datosPeticion = JSON.stringify(datos);
 
     $.ajax({
@@ -70,12 +69,11 @@ function actualizar() {
  * Configura el aspecto de la página para actualizar el registro
  */
 function activaEditar() {
-    $("#imgancho").hide();
     $("#idEdit").hide();
-    $("#barra_lateral").show(500);
-    $("#editar").show(500);
-    $("#idEdit").focus();
+    $("#Content").show(500);
     $("#nuevo").hide();
-    $("#nuevoRegistro").show()
-    $("#listado").show(500);
+    $("#editar").show(500);
+    $("#nuevoRegistro").hide(500);
+    $("#listado").hide(500);
+    $("#Titulo_texto").hide(500);
 }

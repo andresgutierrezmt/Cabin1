@@ -9,7 +9,7 @@
     <!--
     <script src="js/jquery-3.6.0.min.js"></script>
     -->
-    <link rel="stylesheet" href="css/listaStyle.css">
+    <link rel="stylesheet" href="css/indexStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Pjs/listar.js"></script>
     <script src="Pjs/registrar.js"></script>
@@ -18,122 +18,108 @@
     <script src="Pjs/funciones.js"></script>
 </head>
 
-<body>
-    <div>
 
+<header>    
+    <nav class="menu">
+        <section class="menu_container">
+            <h1>
+                <a class="menu_logo" href="index.html">Cabin</a>
+            </h1>
 
-        <!-- en el elemento identificado con el id 'mensajes' se mostraran los mensajes
-            o resultado de ejecutar la peticion
-        -->
-        <div id="mensajes"></div>
-        <br>
+            <ul class="menu_links">
+                <li class="menu_item">
+                    <a href="acerca.html" class="menu_link">Acerca de nosotros</a>
+                </li>
 
-            
-    <header>
-        <div class=ancho>
-            <div class=logo>
-                <p><a href="index.html">Cabin</a></p>
+                <li class="menu_item menu_item--show">
+                    <a href="#" class="menu_link">Cabañas <img src="assets/Arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu inside">
+                            <a href="listado.html" class="menu_link menu_link--inside">Cabañas</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="categoria.html" class="menu_link menu_link--inside">Categoria</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_item menu_item--show">
+                    <a href="#" class="menu_link">Clientes<img src="assets/Arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu inside">
+                            <a href="clientes.html" class="menu_link menu_link--inside">Nuestros clientes</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="mensajes.html" class="menu_link menu_link--inside">Mensajes</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="#" class="menu_link menu_link--inside">Reservaciones</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_item">
+                    <a href="#" class="menu_link">Contacto</a>
+                </li>
+
+            </ul>
+
+            <div class="menu_hamburger">
+                <img src="assets/menu.svg" class="menu_img">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="listado.html">Cabañas</a></li>
-                    <li><a href="clientes.html">Clientes</a></li>
-                    <li><a href="mensajes.html">Mensajes</a></li>
-                </ul>
-            </nav>            
-        </div>
-    </header>
-        
-    <br>
-    <br>
 
-<div class = "principal">
+        </section>
+    </nav>
+</header>
+
+
+<body>
     
-    <div class="container">
-        <button id="nuevoRegistro" onclick="activaNuevo();">nueva cabaña</button>
+
+<div class="contenedor_principal">
+        <h3 class="Titulo_texto" id="Titulo_texto"> Cabañas</h3>
         <!--aqui se actualizara el listado -->
-        <br></br>
         <div id="listado"></div>
-    </div>
+        <div class="buton_item">
+            <button id="nuevoRegistro" onclick="activaNuevo();">nueva cabaña</button>
+        </div>
 
-    <div id="imgancho">
-        <div id=img></div>
-    </div>
-
-    <aside id = "barra_lateral">
         <div id= "Content">
             <!-- Seccion para nuevos registros-->
-            <div id="nuevo">
-                <h3>Registrar una nueva cabaña</h3>
-
-                <fieldset>
-                <p>
-                        <h5>Id</h5>
-                        <input type="number" id="id" placeholder="id">
-                    </p>
-                    <p>
-                        <h5>Nombre</h5>
-                        <input type="text" id="name" placeholder="name">
-                    </p>
-                    <p>
-                        <h5>Marca</h5>
-                        <input type="text" id="brand" placeholder="brand">
-                    </p>             
-                    <p>
-                        <h5>Cuarto</h5>
-                        <input type="number" id="rooms" placeholder="rooms">
-                    </p>
-                    <p>
-                        <h5>Categoria</h5>
-                        <input type="number" id="category" placeholder="category_id">
-                    </p>
-                    <p>
+            <section id="nuevo">
+                        <h4>formuario Registro</h4>
+                        <input class="entradasT" type="number" id="id" placeholder="id">
+                        <input class="entradasT" type="text" id="name" placeholder="name">
+                        <input class="entradasT" type="text" id="brand" placeholder="brand">
+                        <input class="entradasT" type="number" id="rooms" placeholder="rooms">
+                        <input class="entradasT" type="number" id="category" placeholder="category_id">
                         <button onclick="registrar();">Guardar</button>
                         <button onclick="estadoInicial();">Cancelar</button>
-                    </p>
-                </fieldset>
-            </div>
+                </section>
 
 
             <!-- Seccion para editar registros-->
-            <div id="editar">
-                <h4>Editar cabñana</h4>
-                    <fieldset>
-                        <input type="number" id="idEdit" placeholder="id">
-                        <p>
-                            <h5>Nombre</h5>
-                            <input type="text" id="nameEdit" placeholder="name">
-                        </p>
-                        <p>
-                            <h5>Marca</h5>
-                            <input type="text" id="brandEdit" placeholder="brand">
-                        </p>
-                        <p>
-                            <h5>Cuartos</h5>
-                            <input type="number" id="roomsEdit" placeholder="rooms">
-                        </p>
-                        <p>
-                            <h5>Categoria</h5>
-                            <input type="number" id="categoryEdit" placeholder="category_id">
-                        </p>
-                        <p>
-                            <button onclick="actualizar();">Actualizar</button>
-                            <button onclick="estadoInicial();">Cancelar</button>
-                        </p>
-                    </fieldset>
-            </div>
+            <section id="editar">
+                        <h4>Editar cabñana</h4>
+                        <h6>id</h6>
+                        <input class="entradasT" type="number" id="idEdit" placeholder="id">
+                        <h6>nombre</h6>
+                        <input class="entradasT" type="text" id="nameEdit" placeholder="name">
+                        <h6>marca</h6>
+                        <input class="entradasT" type="text" id="brandEdit" placeholder="brand">
+                        <h6>cuartos</h6>
+                        <input class="entradasT" type="number" id="roomsEdit" placeholder="rooms">
+                        <h6>categoria</h6>
+                        <input class="entradasT" type="number" id="categoryEdit" placeholder="category_id">
+                        <button onclick="actualizar();">Actualizar</button>
+                        <button onclick="estadoInicial();">Cancelar</button>
+            </section>
         </div>
-    </aside>
-</div>
+    </div>
 
-<div class="clearfix"></div>
-
-<br>
-<br>
-
-<footer>
-    Cabin web | Desarrollada por Andres C. Gutierrez
-</footer>
+    <footer class="pie_pagina">
+        Web Cabin | Desarrollado por Andres Camilo Gutierrez
+    </footer>
 
 </body>
 

@@ -66,10 +66,10 @@ function actualizar() {
  */
 function activaEditar() {
     $("#idEdit").hide();
+    $("#Content").show(500);
     $("#editar").show(500);
-    $("#idEdit").focus();
     $("#nuevo").hide();
-    $("#nuevoRegistro").show()
+    $("#nuevoRegistro").hide()
     $("#perfil").hide();
-    $("#listado").show(500);
+    $("#listado").hide(500);
 }

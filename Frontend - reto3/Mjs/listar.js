@@ -40,12 +40,12 @@ function listar() {
 function listarRespuesta(items) {
     $("#listado").html("");
     $("#listado").show();
-    var tabla = `<table border="5">
-                <tr>
+    var tabla = `<table>
+                <thead>
                     <th> id </th>
                     <th> mensaje </th>
                     <th colspan="2"> Opciones </th>
-                </tr>`;
+                </thead>`;
     for (var i=0; i < items.length; i++) {
         tabla +=`<tr>
                     <td>${items[i].id}</td>
@@ -64,7 +64,8 @@ function listarRespuesta(items) {
  * Volver al estado inicial
  */
 function estadoInicial(){
-    $("#nuevo").hide();
+    $("#nuevo").hide();  
+    $("#Content").hide();
     $("#editar").hide();
     $("#listado").show(500);
     $("#nuevoRegistro").show()

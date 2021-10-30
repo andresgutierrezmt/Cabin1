@@ -61,10 +61,9 @@ function actualizar() {
  * Configura el aspecto de la página para actualizar el registro
  */
 function activaEditar() {
-    $("#idEdit").hide();
     $("#editar").show(500);
-    $("#idEdit").focus();
+    $("#Content").show(500);
     $("#nuevo").hide();
-    $("#nuevoRegistro").show()
-    $("#listado").show(500);
+    $("#listado").hide(500);
+    $("#Titulo_texto").hide(500);
 }
