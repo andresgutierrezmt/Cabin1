@@ -66,6 +66,9 @@ function listarRespuesta(items) {
  */
 
 function estadoInicial(){
+    $(".contenedor_principal").css("background","rgb(255, 255, 255)");
+    $(".contenedor_principal").css("box-shadow"," 2px 3px 4px rgb(51, 51, 51)");
+    $(".pie_pagina").show(500);
     $("#nuevo").hide();    
     $("#Content").hide();
     $("#editar").hide();
