@@ -4,13 +4,18 @@
  */
 package com.reto3b.reto3b.servicios;
 
-import com.reto3b.reto3b.modelos.Cabin;
 import java.util.List;
 import java.util.Optional;
 import com.reto3b.reto3b.modelos.Reservation;
+import com.reto3b.reto3b.reports.ContadorClientes;
+import com.reto3b.reto3b.reports.ReservationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.reto3b.reto3b.repositorios.RepositorioReservation;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -81,4 +86,38 @@ public class ServiciosReservation {
         }).orElse(false);
         return aBoolean;
     }
+    
+    
+    public ReservationStatus getReportStatusReservation(){
+        List<Reservation>completed = metodosCrud.ReservacionStatus("completed");
+        List<Reservation>cancelled = metodosCrud.ReservacionStatus("cancelled");
+        return new ReservationStatus (completed.size(), cancelled.size());
+    }
+    
+    public List<Reservation> getReportDate(String dateOne, String dateTwo){
+        SimpleDateFormat parser=new SimpleDateFormat ("yyyy-MM-dd");
+        Date dateA = new Date();
+        Date dateB = new Date();
+        
+        try{
+            dateA = parser.parse(dateOne);
+            dateB = parser.parse(dateTwo);
+        }catch(ParseException evt){
+            evt.printStackTrace();
+        }if(dateA.before(dateB)){
+            return metodosCrud.ReservationDate(dateA, dateB);
+        }else{
+        return new ArrayList<>();
+        }
+    }
+    
+    public List<ContadorClientes> getTopClients(){
+        return metodosCrud.getTopClient();
+    }
+    
+    public Integer pruebas(){
+        return metodosCrud.prueba();
+    }
 }
+
+

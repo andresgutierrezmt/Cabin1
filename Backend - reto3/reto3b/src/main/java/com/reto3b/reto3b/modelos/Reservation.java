@@ -41,7 +41,7 @@ public class Reservation implements Serializable{
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status = "created";
+    private String status;
     private String score;
     
     @ManyToOne
@@ -55,7 +55,6 @@ public class Reservation implements Serializable{
     private Cabin cabin;
     
     
-
     /*@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="reservation")
     @JsonIgnoreProperties("score")
     private List<Score> score;*/
