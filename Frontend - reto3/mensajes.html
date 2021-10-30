@@ -2,10 +2,30 @@
 <html lang="en">
 
 <head>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Opciones -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensajes</title>
+    <title>Cabin - Mensajes</title>
+    <link rel="stylesheet" href="css/indexStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Mjs/listar.js"></script>
     <script src="Mjs/registrar.js"></script>
@@ -14,53 +34,100 @@
     <script src="Mjs/funciones.js"></script>
 </head>
 
-<body>
-    <h1>Mensajes de nuestros clientes</h1>
-    <div id="mensajes"></div>
-    <br>
-    <a href="index.html"><img src="img/back.png" alt="Regresar"></a>
+<header>    
+    <nav class="menu">
+        <section class="menu_container">
+            <h1>
+                <a class="menu_logo" href="index.html">Cabin</a>
+            </h1>
 
-    <button id="nuevoRegistro" onclick="activaNuevo();">nuevo mensaje</button>
-    <br></br>
-    <div id="listado"></div>
+            <ul class="menu_links">
+                <li class="menu_item">
+                    <a href="acerca.html" class="menu_link">Acerca de nosotros</a>
+                </li>
 
-            <!-- Seccion para nuevos registros-->
-            <div id="nuevo">
-                <h3>nuevo mensaje</h3>
-                <fieldset>
-                    <p>
-                        <h5>identificacion</h5>
-                        <input type="number" id="id" placeholder="id">
-                    </p>
-                    <p>
-                        <h5>Mensaje</h5>
-                        <input type="text" id="mensaje" placeholder="message">
-                    </p>
-                    <p>
-                        <button onclick="registrar();">Guardar</button>
-                        <button onclick="estadoInicial();">Cancelar</button>
-                    </p>
-                </fieldset>
+                <li class="menu_item menu_item--show">
+                    <a href="#" class="menu_link">Bases de datos<img src="assets/Arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu inside">
+                            <a href="listado.html" class="menu_link menu_link--inside">Cabañas</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="categoria.html" class="menu_link menu_link--inside">Categorias</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="clientes.html" class="menu_link menu_link--inside">Clientes</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="mensajes.html" class="menu_link menu_link--inside">Mensajes</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_item menu_item--show">
+                    <a href="#" class="menu_link">Clientes<img src="assets/Arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu inside">
+                            <a href="clientes.html" class="menu_link menu_link--inside">Registrarse</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="mensajes.html" class="menu_link menu_link--inside">Mensaje</a>
+                        </li>
+                        <li class="menu inside">
+                            <a href="#" class="menu_link menu_link--inside">Reservar</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_item">
+                    <a href="#" class="menu_link">Contacto</a>
+                </li>
+
+            </ul>
+
+            <div class="menu_hamburger">
+                <img src="assets/menu.svg" class="menu_img">
             </div>
+
+        </section>
+    </nav>
+</header>
+
+
+<body>
+
+<div class="contenedor_principal">
+        <h3 class="Titulo_texto" id="Titulo_texto">Mensajes recibidos</h3>
+        <div id="listado"></div>
+        <div class="buton_item">
+            <button id="nuevoRegistro" onclick="activaNuevo();">mensaje nuevo</button>
+        </div>
+
+        <div id= "Content">
+            <section id="nuevo">
+                <h4>nuevo mensaje</h4>
+                    <input class="entradasT" type="number" id="id" placeholder="id">
+                    <input class="entradasT" type="textarea" id="mensaje" placeholder="message">
+                    <button onclick="registrar();">Guardar</button>
+                    <button onclick="estadoInicial();">Cancelar</button> 
+            </section>
     
     
-            <!-- Seccion para editar cliente-->
-            <div id="editar">
+            <!-- Seccion para editar mensaje-->
+            <section id="editar">
                 <h4>Editar cliente</h4>
-                    <fieldset>
-                        <p>
-                        <input type="number" id="idEdit" placeholder="Identificacion">
-                        </p>
-                        <p>
-                            <h5>Editar Mensaje</h5>
-                            <input type="text" id="mensajeEdit" placeholder="mensaje">
-                        </p>
-                        <p>
+                        <input class="entradasT" type="number" id="idEdit" placeholder="Identificacion">
+                            <h6>Editar Mensaje</h5>
+                            <textarea class="entradasT" id="mensajeEdit" placeholder="mensaje"></textarea>
                             <button onclick="actualizar();">Actualizar</button>
                             <button onclick="estadoInicial();">Cancelar</button>
-                        </p>
-                    </fieldset>
-            </div>
+                </section>
+        </div>
+</div>
+
+    <footer class="pie_pagina">
+        Web Cabin | Desarrollado por Andres Camilo Gutierrez kibris
+    </footer>
 </body>
 </html>
 

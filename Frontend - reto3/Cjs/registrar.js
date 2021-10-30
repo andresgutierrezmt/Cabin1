@@ -34,6 +34,12 @@ function registrar() {
  * ventana nuevo registro
  */
 function activaNuevo(){
+<<<<<<< HEAD
+=======
+    $(".contenedor_principal").css("background","#0066ff00");
+    $(".contenedor_principal").css("box-shadow"," 2px 3px 4px #0066ff00");
+    $(".pie_pagina").hide(500);
+>>>>>>> 99942785d8bddc5227634bcb9dccfc8b77f691d5
     $("#Content").show(500);
     $("#nuevo").show(500);
     $("#id").focus();

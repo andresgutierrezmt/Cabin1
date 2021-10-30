@@ -4,6 +4,8 @@ import com.reto3b.reto3b.modelos.Cabin;
 import java.util.List;
 import java.util.Optional;
 import com.reto3b.reto3b.modelos.Reservation;
+import com.reto3b.reto3b.reports.ContadorClientes;
+import com.reto3b.reto3b.reports.ReservationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,5 +60,25 @@ public class ControladorReservation_1 {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int idReservation){
         return servicios.delete(idReservation);
-    }    
+    }
+
+    @GetMapping("/report-status")
+    public  ReservationStatus getReservas(){
+        return servicios.getReportStatusReservation();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getDateReservation(@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
+        return servicios.getReportDate(dateOne, dateTwo);
+    }
+    
+    @GetMapping("/report-clients")
+    public List<ContadorClientes> getClients(){
+        return servicios.getTopClients();
+    }
+    
+     @GetMapping("/report-prueba")
+    public Integer pruebas(){
+        return servicios.pruebas();
+    }
 }
