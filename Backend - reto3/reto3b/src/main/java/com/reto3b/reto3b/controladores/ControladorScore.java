@@ -36,12 +36,12 @@ public class ControladorScore {
     private ServiciosScore servicios;
     
     @GetMapping("/all")
-    public List<Score> getAdmin(){
+    public List<Score> getScore(){
         return servicios.getAll();
     }
     
-    @GetMapping("/id")
-    public Optional<Score> getAdmin(int id){
+    @GetMapping("/{id}")
+    public Optional<Score> getScore(@PathVariable("id") int id){
         return servicios.getScore(id);
     }
     

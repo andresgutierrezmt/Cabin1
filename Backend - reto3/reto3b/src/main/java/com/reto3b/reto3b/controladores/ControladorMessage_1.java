@@ -41,7 +41,7 @@ public class ControladorMessage_1 {
         return servicios.getAll();
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Message> getMessage(@PathVariable("id") int id){
         return servicios.getMessage(id);
     }

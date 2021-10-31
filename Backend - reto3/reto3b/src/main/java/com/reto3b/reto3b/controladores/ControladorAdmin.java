@@ -39,8 +39,8 @@ public class ControladorAdmin {
         return servicios.getAll();
     }
     
-    @GetMapping("/id")
-    public Optional<Admin> getAdmin(int id){
+    @GetMapping("/{id}")
+    public Optional<Admin> getAdmin(@PathVariable("id") int id){
         return servicios.getAdmin(id);
     }
     
