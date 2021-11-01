@@ -6,14 +6,14 @@ function editarRegistro(llaveRegistro) {
     let datosPeticion = JSON.stringify(datos);
 
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client/"+llaveRegistro,
+        url: "http://144.22.58.188:8080/api/Client/"+llaveRegistro,
         type: 'GET',
         contentType: "application/JSON",
         dataType: 'json',
 
         success: function (respuesta) {
             console.log(respuesta);
-            editarRespuesta(respuesta.items);
+            editarRespuesta(respuesta);
             activaEditar();
         },
 
@@ -24,10 +24,11 @@ function editarRegistro(llaveRegistro) {
 }
 
 function editarRespuesta(items) {
-    $("#idEdit").val(items[0].id);
-    $("#nameEdit").val(items[0].name);
-    $("#emailEdit").val(items[0].email);
-    $("#ageEdit").val(items[0].age);   
+    $("#idEdit").val(items.id);
+    $("#nameEdit").val(items.name);
+    $("#emailEdit").val(items.email);
+    $("#ageEdit").val(items.age);   
+    $("#passwordEdit").val();
 }
 
 function actualizar() {
@@ -36,13 +37,14 @@ function actualizar() {
         name: $("#nameEdit").val(),
         email: $("#emailEdit").val(),
         age: $("#ageEdit").val(),
+        password: $("#passwordEdit").val()
     }
 
     let datosPeticion = JSON.stringify(datos);
 
     if (validarEditar()) {
         $.ajax({
-            url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client",
+            url: "http://144.22.58.188:8080/api/Client/update",
             data: datosPeticion,
             type: 'PUT',
             contentType: "application/JSON",

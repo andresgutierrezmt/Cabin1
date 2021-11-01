@@ -109,9 +109,9 @@
                 <!-- Seccion para nuevos registros-->
                 <div id="nuevo">
                     <h4>Registrar nuevo cliente</h4>
-                            <input class="entradasT" type="number" id="id" placeholder="id">
                             <input class="entradasT" type="text" id="name" placeholder="name">
                             <input class="entradasT" type="text" id="email" placeholder="email">
+                            <input class="entradasT" type="password" id="password" placeholder="password">
                             <input class="entradasT" type="number" id="age" placeholder="edad">
                             <button onclick="registrar();">Guardar</button>
                             <button onclick="estadoInicial();">Cancelar</button>
@@ -121,11 +121,13 @@
                 <!-- Seccion para editar cliente-->
                 <div id="editar">
                     <h4>Editar cliente</h4>
-                            <input class="entradasT" type="number" id="idEdit" placeholder="id">
+                                <input class="entradasT" type="number" id="idEdit" placeholder="id">
                                 <h5>Nombre</h5>
                                 <input class="entradasT" type="text" id="nameEdit" placeholder="name">
                                 <h5>Email</h5>
-                                <input class="entradasT" type="text" id="emailEdit" placeholder="brand">
+                                <input class="entradasT" type="text" id="emailEdit" placeholder="email">
+                                <h5>New Password</h5>
+                                <input class="entradasT" type="password" id="passwordEdit" placeholder="password">
                                 <h5>Edad</h5>
                                 <input class="entradasT" type="number" id="ageEdit" placeholder="rooms">
                                 <button onclick="actualizar();">Actualizar</button>

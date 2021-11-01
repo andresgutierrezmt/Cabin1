@@ -1,19 +1,13 @@
 function PerfilObtener(llaveRegistro) {
-    let datos = {
-        id: llaveRegistro
-    }
-
-    let datosPeticion = JSON.stringify(datos);
-
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client/"+llaveRegistro,
+        url: "http://144.22.58.188:8080/api/Client/"+llaveRegistro,
         type: 'GET',
         contentType: "application/JSON",
         dataType: 'json',
 
         success: function (respuesta) {
             console.log(respuesta);
-            mostrarPerfil(respuesta.items);
+            mostrarPerfil(respuesta);
         },
 
         error: function (xhr, status) {
@@ -23,13 +17,12 @@ function PerfilObtener(llaveRegistro) {
 }
 
 function mostrarPerfil(items){
+$("#identificacion").html(items.idClient);
+$("#nombre").html(items.name);
+$("#correo").html(items.email);
+$("#años").html(items.age);
 
-$("#identificacion").html(items[0].id);
-$("#nombre").html(items[0].name);
-$("#correo").html(items[0].email);
-$("#años").html(items[0].age);
-
-var botones = `<button class="btnperfil" onclick="editarRegistro(${items[0].id})">Actualizar</button><button class="btnperfil" onclick="estadoInicial();">atras</button>`;
+var botones = `<button class="btnperfil" onclick="editarRegistro(${items.idClient})">Actualizar</button><button class="btnperfil" onclick="estadoInicial();">atras</button>`;
 
 $("#botones").html(botones);
 $("#botones").show();

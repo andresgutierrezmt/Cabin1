@@ -1,17 +1,16 @@
 function registrar() {
 
     let datos={
-        id: $("#id").val(),
         name: $("#name").val(),
         email: $("#email").val(),
+        password: $("#password").val(),
         age: $("#age").val(),
     }
-
     let datosPeticion = JSON.stringify(datos);
 
     if (validar()){
         $.ajax({
-            url:"https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client",
+            url:"http://144.22.58.188:8080/api/Client/save",
             data : datosPeticion,
             type: 'POST',
             contentType:"application/JSON",

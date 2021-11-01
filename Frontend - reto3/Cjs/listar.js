@@ -14,13 +14,13 @@ function listar() {
      * Inicio servicio Ajax
      */
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "http://144.22.58.188:8080/api/Client/all",
         type: 'GET',
         dataType: 'json',
 
         success: function (respuesta) {
-            console.log(respuesta.items);
-            listarRespuesta(respuesta.items);
+            console.log(respuesta);
+            listarRespuesta(respuesta);
         },
 
         error: function (xhr, status) {
@@ -49,11 +49,11 @@ function listarRespuesta(items) {
                 </thead>`;
     for (var i=0; i < items.length; i++) {
         tabla +=`<tr>
-                    <td>${items[i].id}</td>
+                    <td>${items[i].idClient}</td>
                     <td>${items[i].name}</td>
-                    <td><button onclick="editarRegistro(${items[i].id})">Editar</button></td>
-                    <td><button onclick="borrarRegistro(${items[i].id})">Borrar</button></td>
-                    <td><button onclick="Perfil(${items[i].id})">Perfil</button></td>
+                    <td><button onclick="editarRegistro(${items[i].idClient})">Editar</button></td>
+                    <td><button onclick="borrarRegistro(${items[i].idClient})">Borrar</button></td>
+                    <td><button onclick="Perfil(${items[i].idClient})">Perfil</button></td>
                 </tr>`;
     }
 
@@ -74,11 +74,11 @@ function estadoInicial(){
     $("#editar").hide();
     $("#perfil").hide();
     $("#listado").show(500);
-    $("#nuevoRegistro").show(500)
+    $("#nuevoRegistro").show(500);
+    $("#Titulo_texto").show(500);
 //vaciar casillas
-    $("#id").val(""),
-    $("#brand").val(""),
-    $("#rooms").val(""),
-    $("#category").val(""),
-    $("#name").val("")
+    $("#password").val("");
+    $("#email").val("");
+    $("#name").val("");
+    $("#age").val("");
 }
