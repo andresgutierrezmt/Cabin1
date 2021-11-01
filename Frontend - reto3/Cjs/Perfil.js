@@ -39,6 +39,9 @@ $("#perfil").show(500);
 
 
 function Perfil(llaveRegistro){ 
+    $(".contenedor_principal").css("background","#0066ff00");
+    $(".contenedor_principal").css("box-shadow"," 2px 3px 4px #0066ff00");
+    $(".pie_pagina").hide(500);
     $("#Titulo_texto").hide(500);
     $("#Content").show(500);
     $("#nuevo").hide();

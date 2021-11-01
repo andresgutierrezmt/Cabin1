@@ -5,7 +5,7 @@ function editarRegistro(llaveRegistro) {
     let datosPeticion = JSON.stringify(datos);
 
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cabin/cabin/" + llaveRegistro,
+        url: "http://144.22.58.188:8080/api/Cabin/" + llaveRegistro,
 
         type: 'GET',
         contentType: "application/JSON",
@@ -13,7 +13,7 @@ function editarRegistro(llaveRegistro) {
 
         success: function (respuesta) {
             console.log(respuesta);
-            editarRespuesta(respuesta.items);
+            editarRespuesta(respuesta);
             activaEditar();
         },
 
@@ -24,27 +24,29 @@ function editarRegistro(llaveRegistro) {
 }
 
 function editarRespuesta(items) {
-    $("#idEdit").val(items[0].id);
-    $("#brandEdit").val(items[0].brand);
-    $("#roomsEdit").val(items[0].rooms);
-    $("#categoryEdit").val(items[0].category_id);   
-    $("#nameEdit").val(items[0].name); 
+    $("#idEdit").val(items.id);
+    $("#brandEdit").val(items.brand);
+    $("#roomsEdit").val(items.rooms);
+    $("#categoryEdit").val(items.category.id);   
+    $("#nameEdit").val(items.name); 
 }
 
 function actualizar() {
+
     let datos = {
         id: $("#idEdit").val(),
         brand: $("#brandEdit").val(),
         rooms: $("#roomsEdit").val(),
-        category_id: $("#categoryEdit").val(),
+        category: {id : $("#categoryEdit").val()},
         name: $("#nameEdit").val()
     }
 
     let datosPeticion = JSON.stringify(datos);
 
     if (validarEditar()) {
+        alert(datosPeticion);
         $.ajax({
-            url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+            url: "http://144.22.58.188:8080/api/Cabin/update",
 
             data: datosPeticion,
             type: 'PUT',
@@ -58,7 +60,7 @@ function actualizar() {
             },
 
             error: function (xhr, status) {
-                alert("Error peticion Post..." + status);
+                alert("Error peticion Post, categoria inexistente " + status);
                 //$("#mensajes").hide(1000);
             }
         });
@@ -69,6 +71,9 @@ function actualizar() {
  * Configura el aspecto de la página para actualizar el registro
  */
 function activaEditar() {
+    $(".contenedor_principal").css("background","#0066ff00");
+    $(".contenedor_principal").css("box-shadow"," 2px 3px 4px #0066ff00");
+    $(".pie_pagina").hide(500);
     $("#idEdit").hide();
     $("#Content").show(500);
     $("#nuevo").hide();

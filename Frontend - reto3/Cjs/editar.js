@@ -65,6 +65,9 @@ function actualizar() {
  * Configura el aspecto de la página para actualizar el registro
  */
 function activaEditar() {
+    $(".contenedor_principal").css("background","#0066ff00");
+    $(".contenedor_principal").css("box-shadow"," 2px 3px 4px #0066ff00");
+    $(".pie_pagina").hide(500);
     $("#idEdit").hide();
     $("#Content").show(500);
     $("#editar").show(500);

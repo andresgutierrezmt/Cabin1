@@ -5,13 +5,14 @@ $(document).ready(function () {
 
 function listar() {
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url: "http://144.22.58.188:8080/api/Cabin/all",
         type: 'GET',
-        dataType: 'json',
+        dataType: 'JSON', 
 
         success: function (respuesta) {
-            console.log(respuesta.items);
-            listarRespuesta(respuesta.items);
+            alert(respuesta[0].description);
+            console.log(respuesta);
+            listarRespuesta(respuesta);
         },
 
         error: function (xhr, status) {
@@ -29,23 +30,25 @@ function listar() {
 function listarRespuesta(items) {
     $("#listado").html("");
     $("#listado").show();
+
     var tabla = `<table>
                 <thead>
-                    <th>Marca</th>
-                    <th>habitacion</th>
-                    <th>Categoria</th>
                     <th>Nombre</th>
-                    <th colspan="2">Acciones</th>
+                    <th>Marca</th>
+                    <th>habitaciones</th>
+                    <th>category</th>
+                    <th colspan="3">Acciones</th>
                 </thead>`;
 
     for (var i=0; i < items.length; i++) {
         tabla +=`<tr>
+                    <td>${items[i].name}</td>
                     <td>${items[i].brand}</td>
                     <td>${items[i].rooms}</td>
-                    <td>${items[i].category_id}</td>
-                    <td>${items[i].name}</td>
+                    <td>${items[i].category.id}</td>
                     <td><button onclick="editarRegistro(${items[i].id})">Editar</button></td>
                     <td><button onclick="borrarRegistro(${items[i].id})">Borrar</button></td>
+                    <td><button onclick="descripcion(${String(items[i].description)})">Descripcion</button></td>
                 </tr>`;
     }
 

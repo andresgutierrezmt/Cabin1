@@ -9,7 +9,6 @@ function validaesVacio(dato){
  */
 function validar(){
     //obtiene valores
-    let id = $("#id").val();
     let name = $("#name").val();
     let brand =$("#brand").val();
     let rooms = $("#rooms").val();
@@ -59,9 +58,10 @@ function validar(){
 
 function validarEditar(){
     let id = $("#idEdit").val();
+    let brand = $("#brandEdit").val();
     let name = $("#nameEdit").val();
-    let email = $("#emailEdit").val();
-    let age = $("#ageEdit").val();
+    let rooms = $("#roomsEdit").val();
+    let category = $("#categoryEdit").val();
     let errores="";
     $("#mensajes").html("");
 
@@ -78,14 +78,20 @@ function validarEditar(){
         $("#mensajes").show(500);
         $("#nameEdit").focus();
         return false;
-    }else if( validaesVacio(email)) {
-        errores="email vacio<br>";
+    }else if( validaesVacio(brand)) {
+        errores="brand vacio<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#emailEdit").focus();
         retagealse;
-    }else if( validaesVacio(age)) {  
-        errores="model vacio<br>";
+    }else if( validaesVacio(rooms)) {  
+        errores="rooms vacio<br>";
+        $("#mensajes").html(errores);
+        $("#mensajes").show(500);
+        $("#ageEdit").focus();
+        return false;
+    } else if( validaesVacio(category)) {  
+        errores="category vacio<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#ageEdit").focus();
