@@ -29,22 +29,23 @@ function editarRespuesta(items) {
     $("#roomsEdit").val(items.rooms);
     $("#categoryEdit").val(items.category.id);   
     $("#nameEdit").val(items.name); 
+    $("#descriptionN").val(items.description);
 }
 
 function actualizar() {
 
     let datos = {
         id: $("#idEdit").val(),
+        name: $("#nameEdit").val(),
         brand: $("#brandEdit").val(),
         rooms: $("#roomsEdit").val(),
         category: {id : $("#categoryEdit").val()},
-        name: $("#nameEdit").val()
+        description: $("#descriptionN").val()
     }
-
+    
     let datosPeticion = JSON.stringify(datos);
 
     if (validarEditar()) {
-        alert(datosPeticion);
         $.ajax({
             url: "http://144.22.58.188:8080/api/Cabin/update",
 
@@ -78,6 +79,7 @@ function activaEditar() {
     $("#Content").show(500);
     $("#nuevo").hide();
     $("#editar").show(500);
+    $("#descripcion").hide(500);
     $("#nuevoRegistro").hide(500);
     $("#listado").hide(500);
     $("#Titulo_texto").hide(500);

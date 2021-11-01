@@ -112,11 +112,11 @@
             <!-- Seccion para nuevos registros-->
             <section id="nuevo">
                         <h4>formuario Registro</h4>
-                        <input class="entradasT" type="number" id="id" placeholder="id">
                         <input class="entradasT" type="text" id="name" placeholder="name">
                         <input class="entradasT" type="text" id="brand" placeholder="brand">
                         <input class="entradasT" type="number" id="rooms" placeholder="rooms">
                         <input class="entradasT" type="number" id="category" placeholder="category_id">
+                        <textarea class="entradasT" id="descriptionN1" placeholder="Descripcion"></textarea>
                         <button onclick="registrar();">Guardar</button>
                         <button onclick="estadoInicial();">Cancelar</button>
                 </section>
@@ -135,14 +135,17 @@
                         <input class="entradasT" type="number" id="roomsEdit" placeholder="rooms">
                         <h6>categoria</h6>
                         <input class="entradasT" type="number" id="categoryEdit" placeholder="category_id">
+                        <h6>Descripcion</h6>
+                        <textarea class="entradasT" id="descriptionN" placeholder="descripcion"></textarea>
                         <button onclick="actualizar();">Actualizar</button>
                         <button onclick="estadoInicial();">Cancelar</button>
             </section>
 
 
             <section id="descripcion">
-                <h4>Perfil del cliente</h4>
-                <h5 class="txt" id="description"></h5>
+                <h4>Descripcion general de la cabaña</h4>
+                <h5 class="txtd" id="description"></h5>
+                <div id="botones"></div>
         </section>
 
         </div>

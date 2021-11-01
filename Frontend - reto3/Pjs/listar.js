@@ -10,7 +10,6 @@ function listar() {
         dataType: 'JSON', 
 
         success: function (respuesta) {
-            alert(respuesta[0].description);
             console.log(respuesta);
             listarRespuesta(respuesta);
         },
@@ -48,7 +47,7 @@ function listarRespuesta(items) {
                     <td>${items[i].category.id}</td>
                     <td><button onclick="editarRegistro(${items[i].id})">Editar</button></td>
                     <td><button onclick="borrarRegistro(${items[i].id})">Borrar</button></td>
-                    <td><button onclick="descripcion(${String(items[i].description)})">Descripcion</button></td>
+                    <td><button onclick="descripcion(${items[i].id})">Descripcion</button></td>
                 </tr>`;
     }
 

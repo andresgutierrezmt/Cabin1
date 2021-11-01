@@ -1,18 +1,18 @@
 function registrar() {
 
     let datos={
-        id: $("#id").val(),
+        name: $("#name").val(),
         brand: $("#brand").val(),
         rooms: $("#rooms").val(),
-        category_id: $("#category").val(),
-        name: $("#name").val()
+        category:{ id: $("#category").val()},
+        description: $("#descriptionN1").val()
     }
 
     let datosPeticion = JSON.stringify(datos);
 
     if (validar()){
         $.ajax({
-            url:"https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+            url:"http://144.22.58.188:8080/api/Cabin/save",
 
             data : datosPeticion,
             type: 'POST',
@@ -40,6 +40,7 @@ function activaNuevo(){
     $("#nuevo").show(500);
     $("#id").focus();
     $("#editar").hide();
+    $("#descripcion").hide(500);
     $("#nuevoRegistro").hide(500);
     $("#listado").hide(500);
     $("#Titulo_texto").hide(500);

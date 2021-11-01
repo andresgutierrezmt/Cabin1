@@ -111,7 +111,7 @@ body {
     
 }
 
-::-webkit-scrollbar {display: none;}
+/*::-webkit-scrollbar {display: none;}*/
 
 
 
@@ -184,6 +184,10 @@ body {
     padding:20px;
 }
 
+.contenedor_principal #listado{
+    overflow-y: auto;
+}
+
 .contenedor_principal #listado thead{
     background:#0066ff;
     border-bottom: solid 5px #040274;
@@ -191,11 +195,10 @@ body {
 }
 
 .contenedor_principal .buton_item{
-    width: 640px;
-    padding: 20px 0px 0px 0px;
-    padding-left: 250px;
+    /*border: 10px solid red;*/
+    width: 100%;
     display: flex;
-    margin: 0px auto;
+    justify-content: center;
 }
 
 .contenedor_principal .buton_item #nuevoRegistro{
@@ -247,6 +250,13 @@ button:hover{
     margin-bottom: 10px;
     border-radius: 4px;
     border: 2px solid #798499;
+}
+
+#Content .txtd{
+    border: 3px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
 }
 
 #Content .entradasT:hover{
