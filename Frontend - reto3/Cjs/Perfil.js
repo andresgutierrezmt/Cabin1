@@ -6,6 +6,7 @@ function PerfilObtener(llaveRegistro) {
         dataType: 'json',
 
         success: function (respuesta) {
+            alert(respuesta.reservations);
             console.log(respuesta);
             mostrarPerfil(respuesta);
         },
@@ -21,6 +22,34 @@ $("#identificacion").html(items.idClient);
 $("#nombre").html(items.name);
 $("#correo").html(items.email);
 $("#años").html(items.age);
+
+var reservation;
+
+try {
+    for(var i; i< items.reservation.length; i++){
+            reservation += `<h4>Reservacion ${i}</h4>
+                            <h5 class="txt">Inicio</h5>
+                            <div class="txt" id=startDate>${items.reservation[i].startDate}</div>
+                            <h5 class="txt">Fin</h5>
+                            <div class="txt" id=stopDate>${items.reservation[i].devolutionDate}</div>
+                            <h5 class="txt">Cabaña</h5>
+                            <div class="txt" id=cabins>${items.reservation[i].cabin.name}</div>
+                            <h5 class="txt">Estado</h5>
+                            <div class="txt" id=status>${items.reservation[i].status}</div>`;
+    }
+}catch(ReferenceError){
+    reservation = `<h4>Reservacion 1</h4>
+                    <h5 class="txt">Inicio</h5>
+                    <div class="txt" id=startDate>${items.reservation.startDate}</div>
+                    <h5 class="txt">Fin</h5>
+                    <div class="txt" id=stopDate>${items.reservation.devolutionDate}</div>
+                    <h5 class="txt">Cabaña</h5>
+                    <div class="txt" id=cabins>${items.reservation.cabin.name}</div>
+                    <h5 class="txt">Estado</h5>
+                    <div class="txt" id=status>${items.reservation.status}</div>`;
+}
+
+$("#reservaciones").html(reservation);
 
 var botones = `<button class="btnperfil" onclick="editarRegistro(${items.idClient})">Actualizar</button><button class="btnperfil" onclick="estadoInicial();">atras</button>`;
 

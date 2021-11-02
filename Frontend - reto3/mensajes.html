@@ -34,6 +34,8 @@
     <script src="Mjs/funciones.js"></script>
 </head>
 
+
+
 <header>    
     <nav class="menu">
         <section class="menu_container">
@@ -68,13 +70,13 @@
                     <a href="#" class="menu_link">Clientes<img src="assets/Arrow.svg" class="menu_arrow"></a>
                     <ul class="menu_nesting">
                         <li class="menu inside">
-                            <a href="clientes.html" class="menu_link menu_link--inside">Registrarse</a>
+                            <a href="registrar.html" class="menu_link menu_link--inside">Registrarse</a>
                         </li>
                         <li class="menu inside">
-                            <a href="mensajes.html" class="menu_link menu_link--inside">Mensaje</a>
+                            <a href="mensajear.html" class="menu_link menu_link--inside">Mensaje</a>
                         </li>
                         <li class="menu inside">
-                            <a href="#" class="menu_link menu_link--inside">Reservar</a>
+                            <a href="reservar.html" class="menu_link menu_link--inside">Reservar</a>
                         </li>
                     </ul>
                 </li>
@@ -93,7 +95,6 @@
     </nav>
 </header>
 
-
 <body>
 
 <div class="contenedor_principal">
@@ -106,7 +107,6 @@
         <div id= "Content">
             <section id="nuevo">
                 <h4>nuevo mensaje</h4>
-                    <input class="entradasT" type="number" id="id" placeholder="id">
                     <input class="entradasT" type="textarea" id="mensaje" placeholder="message">
                     <button onclick="registrar();">Guardar</button>
                     <button onclick="estadoInicial();">Cancelar</button> 

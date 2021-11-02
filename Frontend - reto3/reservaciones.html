@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cabañas</title>
+    <title>Cabin | Reservaciones</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -29,14 +29,13 @@
     -->
     <link rel="stylesheet" href="css/indexStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="Pjs/listar.js"></script>
-    <script src="Pjs/registrar.js"></script>
-    <script src="Pjs/editar.js"></script>
-    <script src="Pjs/borrar.js"></script>
-    <script src="Pjs/funciones.js"></script>
-    <script src="Pjs/descripcion.js"></script>
+    <script src="Rjs/listar.js"></script>
+    <script src="Rjs/registrar.js"></script>
+    <script src="Rjs/editar.js"></script>
+    <script src="Rjs/borrar.js"></script>
+    <script src="Rjs/funciones.js"></script>
+    <script src="Rjs/descripcion.js"></script>
 </head>
-
 
 
 <header>    
@@ -99,57 +98,36 @@
 </header>
 
 
+
 <body>
     
 
 <div class="contenedor_principal">
-        <h3 class="Titulo_texto" id="Titulo_texto"> Cabañas</h3>
+        <h3 class="Titulo_texto" id="Titulo_texto">Reservaciones</h3>
         <!--aqui se actualizara el listado -->
         <div id="listado"></div>
         <div class="buton_item">
-            <button id="nuevoRegistro" onclick="activaNuevo();">nueva cabaña</button>
+            <button id="nuevoRegistro" onclick="activaNuevo();">Nueva reeservacion</button>
         </div>
 
         <div id= "Content">
             <!-- Seccion para nuevos registros-->
             <section id="nuevo">
-                        <h4>formuario Registro</h4>
-                        <input class="entradasT" type="text" id="name" placeholder="name">
-                        <input class="entradasT" type="text" id="brand" placeholder="brand">
-                        <input class="entradasT" type="number" id="rooms" placeholder="rooms">
-                        <input class="entradasT" type="number" id="category" placeholder="category_id">
-                        <textarea class="entradasT" id="descriptionN1" placeholder="Descripcion"></textarea>
-                        <button onclick="registrar();">Guardar</button>
-                        <button onclick="estadoInicial();">Cancelar</button>
-                </section>
-
-
-            <!-- Seccion para editar registros-->
-            <section id="editar">
-                        <h4>Editar cabñana</h4>
-                        <h6>id</h6>
-                        <input class="entradasT" type="number" id="idEdit" placeholder="id">
-                        <h6>nombre</h6>
-                        <input class="entradasT" type="text" id="nameEdit" placeholder="name">
-                        <h6>marca</h6>
-                        <input class="entradasT" type="text" id="brandEdit" placeholder="brand">
-                        <h6>cuartos</h6>
-                        <input class="entradasT" type="number" id="roomsEdit" placeholder="rooms">
-                        <h6>categoria</h6>
-                        <input class="entradasT" type="number" id="categoryEdit" placeholder="category_id">
-                        <h6>Descripcion</h6>
-                        <textarea class="entradasT" id="descriptionN" placeholder="descripcion"></textarea>
-                        <button onclick="actualizar();">Actualizar</button>
-                        <button onclick="estadoInicial();">Cancelar</button>
+                <h4>Reservaciones</h4>
+                <h5>Fecha inicio reservacion</h5>
+                <input class="entradasT" type="date" id="start-date">
+                <h5>Fecha fin de reservacion</h5>
+                <input class="entradasT" type="date" id="stop-date">
+                <h5>Cabaña a elegir</h5>
+                <div id=select></div>
+                <h4>Cuenta de usuario</h4>
+                <h5>Email</h5>
+                <input type="text" class="entradasT" id="email" placeholder="Inserte su correo">
+                <h5>contraseña</h5>
+                <input type="password" class="entradasT" id="password" placeholder="password">
+                <button onclick="traerUsuario();">Guardar</button>
+                <button onclick="estadoInicial();">Cancelar</button>
             </section>
-
-
-            <section id="descripcion">
-                <h4>Descripcion general de la cabaña</h4>
-                <h5 class="txtd" id="description"></h5>
-                <div id="botones"></div>
-        </section>
-
         </div>
     </div>
 

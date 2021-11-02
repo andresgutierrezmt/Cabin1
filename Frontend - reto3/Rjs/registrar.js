@@ -1,17 +1,50 @@
-function registrar() {
+function traerUsuario(){
+    $.ajax({
+        url:"http://144.22.58.188:8080/api/Client/all",
+        type: 'GET',
+        contentType:"application/JSON",
 
-    let datos={
-        name: $("#name").val(),
-        email: $("#email").val(),
-        password: $("#password").val(),
-        age: $("#age").val(),
+        success: function (respuesta) {
+            console.log(respuesta);
+            validacion(respuesta);
+        },
+
+        error: function (xhr, status) {
+            alert("Error peticion POST..." + status );
+        }
+    });
+}
+
+function validacion(items){
+    var emailIngersado =  $("#email").val();
+    var contraseñaIngresada = $("#password").val();
+
+    for (var i=0; i < items.length; i++) {
+        if(emailIngersado == items[i].email && contraseñaIngresada == items[i].password){
+            registrar(items[i].idClient);
+        }
+        else{
+            alert("El correo/usuario no se encuentra registrado o estan mal los datos ingresados verifique o si no registrese para poder reservar");
+        }
     }
 
+}
+
+function registrar(id) {
+
+    let datos={
+        startDate: $("#start-date").val(),
+        devolutionDate: $("#stop-date").val(),
+        client: {idClient: id},
+        cabin: {id : $("#selector").val()},
+        status: "completed"
+    }
+    
     let datosPeticion = JSON.stringify(datos);
 
     if (validar()){
         $.ajax({
-            url:"http://144.22.58.188:8080/api/Client/save",
+            url:"http://144.22.58.188:8080/api/Reservation/save",
             data : datosPeticion,
             type: 'POST',
             contentType:"application/JSON",
@@ -49,15 +82,15 @@ function traerCabañas(){
 
 function activarCampos(items){
 
-    /*var select = `<select class="entradasT" name="cabin" id="selector">
+    var select = `<select class="entradasT" name="cabin" id="selector">
                 <option value="0">Selecione una cabaña</option>`;
     for (var i=0; i < items.length; i++) {
                     select += `<option value="${items[i].id}">${items[i].name}</option>`;
     }
-    select += `</select>`;*/
+    select += `</select>`;
 
-    /*$("#select").html(select);
-    $("#select").show(500);*/             
+    $("#select").html(select);
+    $("#select").show(500);             
     $("#nuevo").show(500);
 }
 

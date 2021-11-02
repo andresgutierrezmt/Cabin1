@@ -282,6 +282,15 @@ button:hover{
     margin-left: 20px;
 }
 
+/**
+* Formularios clientes
+*/
+
+.contenedor_principal_formularios{
+    background:#0066ff00;
+    box-shadow: 2px 3px 4px #0066ff00;
+}
+
 .pie_pagina{
     background:rgb(255, 255, 255);
     border-radius: 4px;
