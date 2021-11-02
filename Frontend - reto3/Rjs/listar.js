@@ -63,9 +63,11 @@ function estadoInicial(){
     $("#barra_lateral").hide();
     $("#nuevo").hide();    
     $("#Content").hide();
+    $("#reportes").hide();
     $("#editar").hide();
     $("#listado").show(500);
     $("#nuevoRegistro").show(500);
+    $("#reporte").show(500);
 
     //limpia el contenido de los campos del formulario nuevo
     $("#id").val(""),

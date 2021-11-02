@@ -199,18 +199,24 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 20px;
 }
 
 .contenedor_principal .buton_item #nuevoRegistro{
     box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
     height: 40px;
-    width: 100px;
 }
 
 button{
     border: 0px;
     height: 30px;
+    margin-left: 10px;
+    padding: 10px;
     box-shadow: 1px 2px 3px rgb(192, 190, 190) ;
+}
+
+#reporte{
+    height:40px;
 }
 
 button:hover{
@@ -244,7 +250,7 @@ button:hover{
     margin-left: 20px;
 }
 
-#Content #reservaciones,#mensajes{
+#Content #reservaciones,#mensajes,#clientes{
     width: 90%;
     padding: 10px;
     height: 200px;
@@ -299,6 +305,12 @@ button:hover{
     margin-left: 20px;
 }
 
+#txtCl{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
 /**
 * Formularios clientes
 */
@@ -308,6 +320,29 @@ button:hover{
     box-shadow: 2px 3px 4px #0066ff00;
     padding-top: 50px;
 }
+
+/**
+* contactame
+*/
+
+.contenedor_principal .titulo2{
+    margin: 30px;
+}
+
+.contenedor_principal .titulo2{
+    margin: 30px;
+}
+
+.contenedor_principal .Titulo_texto2{
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.contenedor_principal .Titulo_texto3{
+    margin-left: 30px;
+    margin: 30px;
+}
+
 
 .pie_pagina{
     background:rgb(255, 255, 255);

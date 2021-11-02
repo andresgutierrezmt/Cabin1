@@ -1,13 +1,22 @@
+/**
+ * Inicializador
+ */
 $(document).ready(function () {
     estadoInicial();
     listar();
 });
 
+/**
+ * Funcion listar
+ */
 function listar() {
+    /**
+     * Inicio servicio Ajax
+     */
     $.ajax({
-        url: "http://144.22.58.188:8080/api/Cabin/all",
+        url: "http://144.22.58.188:8080/api/Category/all",
         type: 'GET',
-        dataType: 'JSON', 
+        dataType: 'json',
 
         success: function (respuesta) {
             console.log(respuesta);
@@ -15,39 +24,37 @@ function listar() {
         },
 
         error: function (xhr, status) {
-            alert("Error al obtener datos" + status);
+            alert("Ocurrio un problema al ejecutar la petición..." + status);
         },
 
         complete: function (xhr, status) {
-            $("#mensajes").show(5000);
-            $("#mensajes").html("Obteniendo listado de ...");
-            $("#mensajes").hide();
+            $("message").show(5000)
+            $("message").html("Obteniendo listado de ...");
+            $("message").hide(5000)
         }
     });
 }
 
+/**
+ * Generar tabla con los items 
+ */
 function listarRespuesta(items) {
     $("#listado").html("");
     $("#listado").show();
-
     var tabla = `<table>
                 <thead>
-                    <th>Nombre</th>
-                    <th>Marca</th>
-                    <th>habitaciones</th>
-                    <th>category</th>
-                    <th colspan="3">Acciones</th>
+                    <th> id </th>
+                    <th> nombre </th>
+                    <th> descripcion </th>
+                    <th colspan="2"> Opciones </th>
                 </thead>`;
-
     for (var i=0; i < items.length; i++) {
         tabla +=`<tr>
+                    <td>${items[i].id}</td>
                     <td>${items[i].name}</td>
-                    <td>${items[i].brand}</td>
-                    <td>${items[i].rooms}</td>
-                    <td>${items[i].category.name}</td>
+                    <td>${items[i].description}</td>
                     <td><button onclick="editarRegistro(${items[i].id})">Editar</button></td>
                     <td><button onclick="borrarRegistro(${items[i].id})">Borrar</button></td>
-                    <td><button onclick="descripcion(${items[i].id})">Descripcion</button></td>
                 </tr>`;
     }
 
@@ -55,22 +62,24 @@ function listarRespuesta(items) {
     $("#listado").html(tabla);
 }
 
+/**
+ * Volver al estado inicial
+ */
 
 function estadoInicial(){
     $(".contenedor_principal").css("background","rgb(255, 255, 255)");
     $(".contenedor_principal").css("box-shadow"," 2px 3px 4px rgb(51, 51, 51)");
     $(".pie_pagina").show(500);
-    $("#barra_lateral").hide();
     $("#nuevo").hide();    
     $("#Content").hide();
     $("#editar").hide();
+    $("#perfil").hide();
     $("#listado").show(500);
     $("#nuevoRegistro").show(500);
-
-    //limpia el contenido de los campos del formulario nuevo
-    $("#id").val(""),
-    $("#brand").val(""),
-    $("#rooms").val(""),
-    $("#category").val(""),
-    $("#name").val("")
+    $("#Titulo_texto").show(500);
+//vaciar casillas
+    $("#password").val("");
+    $("#email").val("");
+    $("#name").val("");
+    $("#age").val("");
 }

@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabin | Reservaciones</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -24,18 +20,23 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!-- Opciones -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabin - Tabla de clientes</title>
     <!--
     <script src="js/jquery-3.6.0.min.js"></script>
     -->
-    <link rel="stylesheet" href="css/indexStyle.css">
+    <link href="css/indexStyle.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="Rjs/listar.js"></script>
-    <script src="Rjs/registrar.js"></script>
-    <script src="Rjs/editar.js"></script>
-    <script src="Rjs/borrar.js"></script>
-    <script src="Rjs/funciones.js"></script>
-    <script src="Rjs/reportes.js"></script>
+    <script src="Cajs/listar.js"></script>
+    <script src="Cajs/registrar.js"></script>
+    <script src="Cajs/editar.js"></script>
+    <script src="Cajs/borrar.js"></script>
+    <script src="Cajs/funciones.js"></script>
 </head>
+
 
 <header>    
     <nav class="menu">
@@ -99,60 +100,36 @@
     </nav>
 </header>
 
-
 <body>
-    
-
-<div class="contenedor_principal">
-        <h3 class="Titulo_texto" id="Titulo_texto">Reservaciones</h3>
-        <!--aqui se actualizara el listado -->
+    <div class="contenedor_principal">
+        <h3 class="Titulo_texto" id="Titulo_texto"> Categoria Cabañas</h3>
         <div id="listado"></div>
         <div class="buton_item">
-            <button id="nuevoRegistro" onclick="activaNuevo();">Nueva reeservacion</button>
-            <button id="reporte" onclick="abrirReportes();">Reportes</button>
+            <button id="nuevoRegistro" onclick="activaNuevo();">Añadir nueva categoria</button>
         </div>
 
-        <div id= "Content">
-            <!-- Seccion para nuevos registros-->
-            <section id="nuevo">
-                <h4>Reservaciones</h4>
-                <h5>Fecha inicio reservacion</h5>
-                <input class="entradasT" type="date" id="start-date">
-                <h5>Fecha fin de reservacion</h5>
-                <input class="entradasT" type="date" id="stop-date">
-                <h5>Cabaña a elegir</h5>
-                <div id=select></div>
-                <h4>Cuenta de usuario</h4>
-                <h5>Email</h5>
-                <input type="text" class="entradasT" id="email" placeholder="Inserte su correo">
-                <h5>contraseña</h5>
-                <input type="password" class="entradasT" id="password" placeholder="password">
-                <button onclick="traerUsuario();">Guardar</button>
-                <button onclick="estadoInicial();">Cancelar</button>
-            </section>
-
-            <div id="reportes">
-                <h4>Reportes</h4>
-                        <h4 class="txt">Reporte de reservaciones</h4>
-                        <div class="txt" id=reservaciones2></div>
-                        <h4 class="txt">Reporte clientes</h4>
-                        <div id= "clientes2"></div>
-                        <h4 class="txt">Reservas en un intervalo de fechas</h4>
-                        <div id="eleccion">
-                            <h5>fecha de inicio</h5>
-                            <input class="entradasT" type="date" id="start-dateE">
-                            <h5>fecha final</h5>
-                            <input class="entradasT" type="date" id="stop-dateE">
-                            <div class="elegir_button">
-                                <button class="elegir" onclick="mostrarReportes2();">elegir</button>
-                            </div>
-                        </div>
-                        <div id="reservaciones"></div>
-                        <div id="botones"></div>
-            </div>
-        </div>
+            <div id= "Content">
+                <!-- Seccion para nuevos registros-->
+                <div id="nuevo">
+                    <h4>Nueva categoria</h4>
+                            <input class="entradasT" type="text" id="name" placeholder="name">
+                            <textarea id="description" cols="50" rows="10" class="txtd" placeholder="descripcion"></textarea>
+                            <button onclick="registrar();">Guardar</button>
+                            <button onclick="estadoInicial();">Cancelar</button>
+                </div>
+                <!-- Seccion para editar cliente-->
+                <div id="editar">
+                    <h4>Editar cliente</h4>
+                                <input class="entradasT" type="number" id="idEdit" placeholder="id">
+                                <h5>Nombre</h5>
+                                <input class="entradasT" type="text" id="nameEdit" placeholder="name">
+                                <h5>description</h5>
+                                <textarea id="descriptionEdit" cols="50" rows="10" class="txtd" placeholder="descripcion"></textarea>
+                                <button onclick="actualizar();">Actualizar</button>
+                                <button onclick="estadoInicial();">Cancelar</button>
+                </div>
+        </div>        
     </div>
-
 
     <footer class="pie_pagina">
         Web Cabin | Desarrollado por Andres Camilo Gutierrez

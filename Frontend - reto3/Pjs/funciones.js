@@ -12,7 +12,6 @@ function validar(){
     let name = $("#name").val();
     let brand =$("#brand").val();
     let rooms = $("#rooms").val();
-    let category = $("#category").val();
     let description= $("#descriptionN1").val();
     let errores="";
     $("#mensajes").html("");
@@ -36,12 +35,6 @@ function validar(){
         $("#mensajes").show(500);
         $("#rooms").focus();
         return false;
-    }else if( validaesVacio(category)) { 
-        errores="category vacio<br>";
-        $("#mensajes").html(errores);
-        $("#mensajes").show(500);
-        $("#category").focus();
-        return false;
     }else if( validaesVacio(description)) {
         errores="name description<br>";
         $("#mensajes").html(errores);
@@ -62,7 +55,6 @@ function validarEditar(){
     let brand = $("#brandEdit").val();
     let name = $("#nameEdit").val();
     let rooms = $("#roomsEdit").val();
-    let category = $("#categoryEdit").val();
     let description= $("#descriptionN").val();
     let errores="";
     $("#mensajes").html("");
@@ -92,13 +84,7 @@ function validarEditar(){
         $("#mensajes").show(500);
         $("#ageEdit").focus();
         return false;
-    } else if( validaesVacio(category)) {  
-        errores="category vacio<br>";
-        $("#mensajes").html(errores);
-        $("#mensajes").show(500);
-        $("#ageEdit").focus();
-        return false;
-    }else if( validaesVacio(description)) {
+    } else if( validaesVacio(description)) {
         errores="descripcion vacio<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);

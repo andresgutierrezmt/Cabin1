@@ -13,7 +13,7 @@ function borrarRegistro(llaveRegistro) {
         },
 
         error: function (xhr, status) {
-            alert("Ocurrio un problema al ejecutar la petición..." + status);
+            alert("Error no se puede eliminar verifique si : 1- No esta asociado a algun elemento 2- Verifique si el servidor esta conectado" + status);
         }
     });
 }
