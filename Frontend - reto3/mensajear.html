@@ -24,18 +24,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabin - Tabla de clientes</title>
-    <!--
-    <script src="js/jquery-3.6.0.min.js"></script>
-    -->
-    <link href="css/indexStyle.css" rel="stylesheet" type="text/css">
+    <title>Cabin - Mensajes</title>
+    <link rel="stylesheet" href="css/indexStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="Cjs/listar.js"></script>
-    <script src="Cjs/registrar.js"></script>
-    <script src="Cjs/editar.js"></script>
-    <script src="Cjs/borrar.js"></script>
-    <script src="Cjs/Perfil.js"></script>
-    <script src="Cjs/funciones.js"></script>
+    <script src="FMejs/registrar.js"></script>
+    <script src="FMejs/funciones.js"></script>
 </head>
 
 
@@ -103,68 +96,32 @@
 </header>
 
 
-
 <body>
-    <div class="contenedor_principal">
-        <h3 class="Titulo_texto" id="Titulo_texto"> Clientes</h3>
-        <div id="listado"></div>
-        <div class="buton_item">
-            <button id="nuevoRegistro" onclick="activaNuevo();">Añadir nuevo cliente</button>
+
+<div class="contenedor_principal_formularios">        
+        <div id= "Content">
+            <section id="nuevo">
+                <h4>Escribir un nuevo mensaje</h4>
+                    <input class="entradasT" type="text" id="email" placeholder="email">
+                    <input class="entradasT" type="password" id="password" placeholder="password">
+                    <select id="score" class="entradasT">
+                        <option value="0">Eliga una calificacion</option>
+                        <option value="1">1 estrella</option>
+                        <option value="2">2 estrellas</option>
+                        <option value="3">3 estrellas</option>
+                        <option value="4">4 estrellas</option>
+                        <option value="5">5 estrellas</option>
+                    </select>
+                    <textarea id="message" cols="50" rows="10" class="txtd" placeholder="Mensaje"></textarea>
+                    <button onclick="traerUsuario();">Guardar</button>
+                    <button onclick="location.href='index.html'">Cancelar</button>
+            </section>
         </div>
-
-            <div id= "Content">
-                <!-- Seccion para nuevos registros-->
-                <div id="nuevo">
-                    <h4>Registrar nuevo cliente</h4>
-                            <input class="entradasT" type="text" id="name" placeholder="name">
-                            <input class="entradasT" type="text" id="email" placeholder="email">
-                            <input class="entradasT" type="password" id="password" placeholder="password">
-                            <input class="entradasT" type="number" id="age" placeholder="edad">
-                            <button onclick="registrar();">Guardar</button>
-                            <button onclick="estadoInicial();">Cancelar</button>
-                </div>
-                <!-- Seccion para editar cliente-->
-                <div id="editar">
-                    <h4>Editar cliente</h4>
-                                <input class="entradasT" type="number" id="idEdit" placeholder="id">
-                                <h5>Nombre</h5>
-                                <input class="entradasT" type="text" id="nameEdit" placeholder="name">
-                                <h5>Email</h5>
-                                <input class="entradasT" type="text" id="emailEdit" placeholder="email">
-                                <h5>New Password</h5>
-                                <input class="entradasT" type="password" id="passwordEdit" placeholder="password">
-                                <h5>Edad</h5>
-                                <input class="entradasT" type="number" id="ageEdit" placeholder="rooms">
-                                <button onclick="actualizar();">Actualizar</button>
-                                <button onclick="estadoInicial();">Cancelar</button>
-                </div>
-        
-                <!-- Seccion para ver perfil del cliente-->
-                <div id="perfil">
-                    <h4>Perfil del cliente</h4>
-                            <h5 class="txt">id</h5>
-                            <div class="txt" id=identificacion></div>
-                            <h5 class="txt">Nombre</h5>
-                            <div class="txt" id=nombre></div>
-                            <h5 class="txt">Email</h5>
-                            <div class="txt" id=correo></div>
-                            <h5 class="txt">Edad</h5>
-                            <div class="txt" id=años></div>
-                            <h4>Reservaciones</h4>
-                            <div id="reservaciones"></div>
-                            <h4>Mensajes</h4>
-                            <div id="mensajes"></div>
-                            <div id= "botones"></div>
-                </div>
-            </div>
-
-        </div>        
-    </div>
-
-    <footer class="pie_pagina">
-        Web Cabin | Desarrollado por Andres Camilo Gutierrez
-    </footer>
+</div>
 
 </body>
-
 </html>
+
+
+
+

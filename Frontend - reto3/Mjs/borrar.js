@@ -1,14 +1,7 @@
 function borrarRegistro(llaveRegistro) {
-    let datos={
-        id: llaveRegistro
-    }
-
-    let datosPeticion = JSON.stringify(datos);
-
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/message/message",
+        url: "http://144.22.58.188:8080/api/Message/"+llaveRegistro,
 
-        data : datosPeticion,
         type: 'DELETE',
         contentType:"application/JSON",
         dataType: 'json',

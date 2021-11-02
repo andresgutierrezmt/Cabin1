@@ -39,6 +39,14 @@ reservation += `</div>`;
 $("#reservaciones").html(reservation);
 $("#reservaciones").show();
 
+var mensajes = `<div id="prueba2">`;
+for(var i = 0; i< items.messages.length; i++){
+            mensajes += `<h4>mensaje ${i+1}</h4>
+                            <div class="txt" id=messageText>${items.messages[i].messageText}</div>`;
+}
+mensajes += `</div>`;
+$("#mensajes").html(mensajes);
+$("#mensajes").show();
 
 var botones = `<button class="btnperfil" onclick="editarRegistro(${items.idClient})">Actualizar</button><button class="btnperfil" onclick="estadoInicial();">atras</button>`;
 

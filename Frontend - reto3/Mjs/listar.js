@@ -14,13 +14,13 @@ function listar() {
      * Inicio servicio Ajax
      */
     $.ajax({
-        url: "https://gac366253d1c276-cabin.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/message/message",
+        url: "http://144.22.58.188:8080/api/Client/all",
         type: 'GET',
         dataType: 'json',
 
         success: function (respuesta) {
-            console.log(respuesta.items);
-            listarRespuesta(respuesta.items);
+            console.log(respuesta);
+            listarRespuesta(respuesta);
         },
 
         error: function (xhr, status) {
@@ -42,18 +42,19 @@ function listarRespuesta(items) {
     $("#listado").show();
     var tabla = `<table>
                 <thead>
-                    <th> id </th>
+                    <th>Nombre</th>
                     <th> mensaje </th>
-                    <th colspan="2"> Opciones </th>
+                    <th> Opcion </th>
                 </thead>`;
     for (var i=0; i < items.length; i++) {
-        tabla +=`<tr>
-                    <td>${items[i].id}</td>
-                    <td>${items[i].messagetext}</td>
-                    <td><button onclick="editarRegistro(${items[i].id})">Editar</button></td>
-                    <td><button onclick="borrarRegistro(${items[i].id})">Borrar</button></
-                    td>
-                    </tr>`;
+        for(var j=0; j< items[i].messages.length; j++){
+            tabla +=`<tr>
+                        <td>${items[i].name}</td>
+                        <td>${items[i].messages[j].messageText}</td>
+                        <td><button onclick="borrarRegistro(${items[i].messages[j].idMessage})">Borrar</button></
+                        td>
+                        </tr>`;
+        }
     }
 
     tabla +=`</table>`;
