@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    activaNuevo();
+});
+
 function traerUsuario(){
     $.ajax({
         url:"http://144.22.58.188:8080/api/Client/all",
@@ -18,15 +22,22 @@ function traerUsuario(){
 function validacion(items){
     var emailIngersado =  $("#email").val();
     var contraseñaIngresada = $("#password").val();
+    var contador = 0;
 
     for (var i=0; i < items.length; i++) {
         if(emailIngersado == items[i].email && contraseñaIngresada == items[i].password){
             registrar(items[i].idClient);
+            break;
         }
         else{
-            alert("El correo/usuario no se encuentra registrado o estan mal los datos ingresados verifique o si no registrese para poder reservar");
+            contador += 1;
         }
     }
+
+    if(contador == items.length){
+        alert("correo o contraseña incorrectos / correo no registrado")
+    }
+
 
 }
 
@@ -50,10 +61,12 @@ function registrar(id) {
             contentType:"application/JSON",
 
             success: function (respuesta) {
+                $("#start-date").val(""),
+                $("#stop-date").val(""),
                 console.log(respuesta);
-                listar();
-                estadoInicial();
                 alert("Registro realizado con exito!")
+
+                location.href="index.html";
             },
 
             error: function (xhr, status) {
@@ -98,6 +111,7 @@ function activarCampos(items){
  * ventana nuevo registro
  */
 function activaNuevo(){
+
     $(".contenedor_principal").css("background","#0066ff00");
     $(".contenedor_principal").css("box-shadow"," 2px 3px 4px #0066ff00");
     $(".pie_pagina").hide(500);

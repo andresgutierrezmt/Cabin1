@@ -244,6 +244,18 @@ button:hover{
     margin-left: 20px;
 }
 
+#Content #reservaciones{
+    width: 90%;
+    height: 200px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    border: 2px solid rgba(43, 43, 43, 0.479);
+    border-radius: 10px;
+}
+
+#Content ::-webkit-scrollbar {display: none;}
+
 #Content .entradasT{
     width: 100%;
     padding: 10px;
@@ -287,8 +299,9 @@ button:hover{
 */
 
 .contenedor_principal_formularios{
-    background:#0066ff00;
+    background:#00000000;
     box-shadow: 2px 3px 4px #0066ff00;
+    padding-top: 50px;
 }
 
 .pie_pagina{

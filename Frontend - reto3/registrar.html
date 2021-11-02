@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabin | Reservaciones</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -20,20 +24,14 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <!-- Opciones -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabin - Mensajes</title>
+    <!--
+    <script src="js/jquery-3.6.0.min.js"></script>
+    -->
     <link rel="stylesheet" href="css/indexStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="Mjs/listar.js"></script>
-    <script src="Mjs/registrar.js"></script>
-    <script src="Mjs/editar.js"></script>
-    <script src="Mjs/borrar.js"></script>
-    <script src="Mjs/funciones.js"></script>
+    <script src="FCjs/registrar.js"></script>
+    <script src="FCjs/funciones.js"></script>
 </head>
-
 
 
 <header>    
@@ -100,41 +98,21 @@
 
 
 <body>
-
-<div class="contenedor_principal">
-        <h3 class="Titulo_texto" id="Titulo_texto">Mensajes recibidos</h3>
-        <div id="listado"></div>
-        <div class="buton_item">
-            <button id="nuevoRegistro" onclick="activaNuevo();">mensaje nuevo</button>
-        </div>
-
+    
+<div class="contenedor_principal_formularios">
         <div id= "Content">
+            <!-- Seccion para nuevos registros-->
             <section id="nuevo">
-                <h4>nuevo mensaje</h4>
-                    <input class="entradasT" type="textarea" id="mensaje" placeholder="message">
-                    <button onclick="registrar();">Guardar</button>
-                    <button onclick="estadoInicial();">Cancelar</button> 
+                <h4>Registrar nuevo cliente</h4>
+                        <input class="entradasT" type="text" id="name" placeholder="name">
+                        <input class="entradasT" type="text" id="email" placeholder="email">
+                        <input class="entradasT" type="password" id="password" placeholder="password">
+                        <input class="entradasT" type="number" id="age" placeholder="edad">
+                        <button onclick="registrar();">Guardar</button>
+                        <button onclick="location.href='index.html'">Cancelar</button>
             </section>
-    
-    
-            <!-- Seccion para editar mensaje-->
-            <section id="editar">
-                <h4>Editar cliente</h4>
-                        <input class="entradasT" type="number" id="idEdit" placeholder="Identificacion">
-                            <h6>Editar Mensaje</h5>
-                            <textarea class="entradasT" id="mensajeEdit" placeholder="mensaje"></textarea>
-                            <button onclick="actualizar();">Actualizar</button>
-                            <button onclick="estadoInicial();">Cancelar</button>
-                </section>
         </div>
-</div>
-
-    <footer class="pie_pagina">
-        Web Cabin | Desarrollado por Andres Camilo Gutierrez kibris
-    </footer>
+    </div>
 </body>
+
 </html>
-
-
-
-
